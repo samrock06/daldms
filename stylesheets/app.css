@@ -1,0 +1,42 @@
+/* Artfully masterminded by ZURB  */
+
+/* --------------------------------------------------
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+body{
+	background: url('../images/escheresque.png');
+}
+#login{
+	margin-top: 85px;
+}
+#login .row .six{
+	padding:10px;
+}
+#login .row .six.info h6{
+	margin-top: -13px;
+	margin-bottom: 30px;
+}
+fieldset{
+	padding-bottom: 12px;
+}
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+
+
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
