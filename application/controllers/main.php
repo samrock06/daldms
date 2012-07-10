@@ -17,9 +17,22 @@ class Main extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct(){
+		parent::__construct();
+		$this->data['scripts']=array(
+				'app.js',
+				'jquery.customforms.js',
+				'jquery.min.js',
+				'jquery.orbit-1.4.0.js',
+				'jquery.reveal.js',
+				'jquery.tooltip.js',
+				'modernizr.foundation.js'
+			);
+	}
 	public function index()
 	{
-		$this->load->view('welcome');
+		$this->data['title']='DalDMS - Login';
+		$this->load->view('welcome', $this->data);
 	}
 }
 
