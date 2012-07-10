@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php echo doctype('html5');?>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -11,9 +11,9 @@
   <meta name="copyright" content="Maavis, Group. Copyright (c) 2012" />
 
   <!-- Included CSS Files -->
-	<link rel="stylesheet" href="./stylesheets/foundation.css">
-  <link rel="stylesheet" href="./stylesheets/ie.css">
-	<link rel="stylesheet" href="./stylesheets/app.css">
+  <?php echo link_tag('stylesheets/foundation.css')."\n";?>
+  <?php echo link_tag('stylesheets/ie.css')."\n";?>
+  <?php echo link_tag('stylesheets/app.css')."\n";?>
 
   <!-- Included JS Files -->
   <?php foreach ($scripts as $script): ?>
@@ -29,35 +29,60 @@
 <div class="container" id="login">
 	<div class="row">
 		<div class="six columns centered info">  
-			<h2>DalDMS</h2>  
+			<h1>DalDMS</h1>  
 			<h6>Document Management System</h6>
+      <?php
+        $email = array(
+          'name'=>'email',
+          'type'=>'text',
+          'placeholder'=>'John.smith@school.ca'
+        );
+        $password = array(
+          'name'=>'password',
+          'placeholder'=>'password'
+        );
+        $login = array(
+          'name'=>'loginsubmit',
+          'value'=>'.',
+          'class'=>'medium radius button icons'
+        );
+        $forgot = array(
+          'name'=>'forgotsubmit',
+          'value'=>'Forgot Password?',
+          'class'=>'medium radius secondary button'
+        );
+      ?>
+      <?php echo form_open('oauth/login');?>
+      <label>Email:</label>
 			<div class="row">
   				<div class="twelve columns">
     				<div class="row collapse">
-      					<div class="three mobile-one columns">
-        					<span class="prefix">Username</span>
+      					<div class="one mobile-one columns">
+        					<span class="prefix icons">U</span>
       					</div>
-      					<div class="nine mobile-three columns">
-        					<input type="text" />
+      					<div class="eleven mobile-three columns">
+        					<?php echo form_input($email);?>
       					</div>
     				</div>
   				</div>
 			</div>
-
+      <label>Password:</label>
 			<div class="row">
   				<div class="twelve columns">
     				<div class="row collapse">
-      					<div class="three mobile-one columns">
-        					<span class="prefix">Password</span>
+      					<div class="one mobile-one columns">
+        					<span class="prefix icons">x</span>
       					</div>
-      					<div class="nine mobile-three columns">
-        					<input type="text" />
+      					<div class="eleven mobile-three columns">
+        					<?php echo form_password($password);?>
       					</div>
     				</div>
   				</div>
 			</div>
-  			<a href="#" class="small button">Login</a>
-  			<a href="#" class="small secondary button">Forgot Password?</a>
+      <?php echo form_submit($login);?>
+      <?php echo anchor('#', 'Forgot your password?', 'title="Forgot password"');?>
+      <?php //echo form_submit($forgot);?>
+      <?php echo form_close();?>
 		</div>
 	</div>
 </div>

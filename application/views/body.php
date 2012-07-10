@@ -1,0 +1,1 @@
+<?php echo heading('Welcome! '.$user, 1);?>

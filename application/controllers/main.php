@@ -21,19 +21,38 @@ class Main extends CI_Controller {
 		parent::__construct();
 		$this->data['base_url']=base_url();
 		$this->data['scripts']=array(
-				'app.js',
-				'jquery.customforms.js',
-				'jquery.min.js',
-				'jquery.orbit-1.4.0.js',
-				'jquery.reveal.js',
-				'jquery.tooltip.js',
-				'modernizr.foundation.js'
+				'javascripts/app.js',
+				'javascripts/jquery.customforms.js',
+				'javascripts/jquery.min.js',
+				'javascripts/jquery.orbit-1.4.0.js',
+				'javascripts/jquery.reveal.js',
+				'javascripts/jquery.tooltip.js',
+				'javascripts/modernizr.foundation.js'
 			);
+	}
+	public function _remap($method)
+	{
+		if($method == 'u')
+		{
+			$this->professor = $this->uri->segment(3);
+			$this->main_user($this->professor);	
+		}
+		else
+		{
+			$this->index();
+		}
 	}
 	public function index()
 	{
 		$this->data['title']='DalDMS - Login';
 		$this->load->view('welcome', $this->data);
+	}
+	function main_user($username=NULL){
+		$this->data['title'] = 'DalDMS - '.$username;
+		$this->data['user'] = $username;
+		$this->data['header'] = $this->load->view('header', $this->data);
+		$this->data['body'] = $this->load->view('body', $this->data);
+		$this->data['footer'] = $this->load->view('footer', $this->data);
 	}
 }
 
