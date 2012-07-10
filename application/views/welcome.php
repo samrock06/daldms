@@ -32,6 +32,9 @@
 			<h1>DalDMS</h1>  
 			<h6>Document Management System</h6>
       <?php
+        $form = array(
+          'class'=>'custom'
+        );
         $email = array(
           'name'=>'email',
           'type'=>'text',
@@ -52,7 +55,8 @@
           'class'=>'medium radius secondary button'
         );
       ?>
-      <?php echo form_open('oauth/login');?>
+
+      <?php echo form_open('oauth/login', $form)."\n";?>
       <label>Email:</label>
 			<div class="row">
   				<div class="twelve columns">
@@ -61,11 +65,12 @@
         					<span class="prefix icons">U</span>
       					</div>
       					<div class="eleven mobile-three columns">
-        					<?php echo form_input($email);?>
+        					<?php echo form_input($email)."\n";?>
       					</div>
     				</div>
   				</div>
 			</div>
+
       <label>Password:</label>
 			<div class="row">
   				<div class="twelve columns">
@@ -74,32 +79,35 @@
         					<span class="prefix icons">x</span>
       					</div>
       					<div class="eleven mobile-three columns">
-        					<?php echo form_password($password);?>
+        					<?php echo form_password($password)."\n";?>
       					</div>
     				</div>
   				</div>
 			</div>
-      <div class="row">
-        <label for="radio1">
-  <input name="radio1" type="radio" id="radio1" style="display:none;">
-  <span class="custom radio"></span> Radio Button 1
-</label>
 
-<label for="radio2">
-  <input name="radio1" type="radio" id="radio2" style="display:none;">
-  <span class="custom radio checked"></span> Radio Button 2
-</label>
-
-<label for="radio3">
-  <input name="radio1" type="radio" id="radio3" disabled style="display:none;">
-  <span class="custom radio"></span> Radio Button 3
-</label>
+      <div class="row choice">
+        <div class="six mobile-two columns">
+          <div class="custom dropdown">
+            <a href="#" class="current">Professor</a>
+            <a href="#" class="selector"></a>
+            <ul>
+              <li>Professor</li>
+              <li>Admin</li>
+              </ul>
+          </div>
+        </div>
+        <div class="six mobile-two columns">
+          <?php echo form_submit($login)."\n";?>
+          <?php echo anchor('#', 'Forgot your password?', 'title="Forgot password"', 'class="forgot"')."\n";?>
+        </div>
       </div>
-
-      <?php echo form_submit($login);?>
-      <?php echo anchor('#', 'Forgot your password?', 'title="Forgot password"');?>
+      <div class="row">
+        <div class="twelve mobile-two columns">
+          <p>Version V0.01</p>
+        </div>
+      </div>
       <?php //echo form_submit($forgot);?>
-      <?php echo form_close();?>
+      <?php echo form_close()."\n";?>
 		</div>
 	</div>
 </div>

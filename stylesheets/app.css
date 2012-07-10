@@ -47,8 +47,20 @@ input[type="password"][disabled]{background-color:#ddd}
 	margin-top: -13px;
 	margin-bottom: 30px;
 }
+#login .row .six.info h6, #login .row .six.info h1{text-shadow:0 -1px 0 rgba(0,0,0,0.15); padding-left:10px;}
+#login form{padding:15px;background: rgba(0, 0, 0, 0.8);border-radius: 3px;box-shadow: 0 0 3px #555;}
+#login form label{color:#eee; padding:5px;}
+#login .choice{
+	margin-bottom: 1em;
+}
+#login p{
+	font-size: 0.7em;
+	float: right;
+ 	color:#eee;
+ 	margin-top: -0.5em;
+ 	margin-bottom: -0.5em;
+}
 a.forgot{
-	margin-top:1.5em;
 	padding-top: 10px;
 }
 
