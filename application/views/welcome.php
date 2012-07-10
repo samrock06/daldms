@@ -7,13 +7,18 @@
 	<!-- Set the viewport width to device width for mobile -->
  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
  	<meta name="description" content="Document Management System for the engineering departments of the 7 atlantic universities." />
-  	<meta name="author" content="Dalhousie Engineering Department" />
-  	<meta name="copyright" content="Maavis, Group. Copyright (c) 2012" />
+  <meta name="author" content="Dalhousie Engineering Department" />
+  <meta name="copyright" content="Maavis, Group. Copyright (c) 2012" />
 
-  	<!-- Included CSS Files -->
+  <!-- Included CSS Files -->
 	<link rel="stylesheet" href="./stylesheets/foundation.css">
-  	<link rel="stylesheet" href="./stylesheets/ie.css">
+  <link rel="stylesheet" href="./stylesheets/ie.css">
 	<link rel="stylesheet" href="./stylesheets/app.css">
+
+  <!-- Included JS Files -->
+  <?php foreach ($scripts as $script): ?>
+  <script type='text/javascript' src = '<?php echo $base_url.$script;?>'></script>
+  <?php endforeach;?>
 
 	<!-- IE Fix for HTML5 Tags -->
 	<!--[if lt IE 9]>

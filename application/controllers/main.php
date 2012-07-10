@@ -19,6 +19,7 @@ class Main extends CI_Controller {
 	 */
 	public function __construct(){
 		parent::__construct();
+		$this->data['base_url']=base_url();
 		$this->data['scripts']=array(
 				'app.js',
 				'jquery.customforms.js',
