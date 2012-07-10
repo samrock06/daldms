@@ -79,6 +79,23 @@
     				</div>
   				</div>
 			</div>
+      <div class="row">
+        <label for="radio1">
+  <input name="radio1" type="radio" id="radio1" style="display:none;">
+  <span class="custom radio"></span> Radio Button 1
+</label>
+
+<label for="radio2">
+  <input name="radio1" type="radio" id="radio2" style="display:none;">
+  <span class="custom radio checked"></span> Radio Button 2
+</label>
+
+<label for="radio3">
+  <input name="radio1" type="radio" id="radio3" disabled style="display:none;">
+  <span class="custom radio"></span> Radio Button 3
+</label>
+      </div>
+
       <?php echo form_submit($login);?>
       <?php echo anchor('#', 'Forgot your password?', 'title="Forgot password"');?>
       <?php //echo form_submit($forgot);?>

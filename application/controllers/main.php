@@ -21,13 +21,14 @@ class Main extends CI_Controller {
 		parent::__construct();
 		$this->data['base_url']=base_url();
 		$this->data['scripts']=array(
+				'javascripts/jquery.min.js',
 				'javascripts/app.js',
 				'javascripts/jquery.customforms.js',
-				'javascripts/jquery.min.js',
 				'javascripts/jquery.orbit-1.4.0.js',
 				'javascripts/jquery.reveal.js',
 				'javascripts/jquery.tooltip.js',
-				'javascripts/modernizr.foundation.js'
+				'javascripts/modernizr.foundation.js',
+				'javascripts/script.js'
 			);
 	}
 	public function _remap($method)
