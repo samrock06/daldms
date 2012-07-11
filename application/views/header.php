@@ -30,14 +30,15 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
-<body onload = removeHash();>
+<body>
+<!--<body onload = removeHash();>-->
 <!--=====================================
   HEADER SECTION
 ======================================-->
 <header id="header">
   <div class="container">
     <div class="row">
-      <div class="twelve mobile-four columns" id="navigation">
+      <div class="seven mobile-four columns" id="navigation">
         <ul class="branding">
           <li><?php 
             $attr = array(
@@ -48,17 +49,20 @@
             ?>
           </li>
         </ul>
-        <ul class="nav">
+      </div>
+      <div class="five mobile-four columns" id="navigation">
+        <ul class="nav hide-on-phones">
           <?php
             $class=array(
-                'class'=>'icons'
+                'class'=>'raphael'
               );
           ?>
-          <li class="user-details"><?php echo $firstname.', '.$lastname.' ('.$status.')';?></li>
-          <li><?php echo anchor('profile','U', $class);?></li>
-          <li><?php echo anchor('settings','S',$class);?></li>
-          <li><?php echo anchor('questions','?',$class);?></li>
-          <li><?php echo anchor('oauth/logout','X',$class);?></li>
+          <li class="user-details"><?php echo ucfirst($status);?></li>
+          <li class="nav-divider"></li>
+          <li><?php echo anchor('u/','S',$class);?></li>
+          <li><?php echo anchor('#profile','L', $class);?></li>
+          <li><?php echo anchor('settings','`',$class);?></li>
+          <li><?php echo anchor('oauth/logout','Ï',$class);?></li>
         </ul>
       </div>
     </div>

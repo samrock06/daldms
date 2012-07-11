@@ -7,10 +7,19 @@ class Dms_model extends CI_Model{
 	}
 	function login($email,$password)
     {
-        $this->db->where("email",$email);
-        $this->db->where("password",$password);
+    	$value = explode("@", $email);
+    	if(count($value) > 1){
+    		$this->db->where("email", $email);
+        	$this->db->where("password",$password);
+        	$query=$this->db->get("users");
+    	}
 
-        $query=$this->db->get("users");
+    	if(count($value) == 1){
+    		$this->db->where("username", $email);
+        	$this->db->where("password",$password);
+        	$query=$this->db->get("users");
+    	}
+    	
         if($query->num_rows()>0)
         {
             foreach($query->result() as $rows)
@@ -18,6 +27,7 @@ class Dms_model extends CI_Model{
                 //add all data to session
                 $newdata = array(
                         'user_id'     => $rows->user_id,
+                        'user_name'		=>$rows->username,
                         'first_name'     => $rows->firstname,
                         'last_name'     => $rows->lastname,
                         'user_email'    => $rows->email,

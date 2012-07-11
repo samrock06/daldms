@@ -14,6 +14,7 @@
   <?php echo link_tag('stylesheets/foundation.css')."\n";?>
   <?php echo link_tag('stylesheets/ie.css')."\n";?>
   <?php echo link_tag('stylesheets/app.css')."\n";?>
+  <link href='http://fonts.googleapis.com/css?family=Marmelad' rel='stylesheet' type='text/css'>
 
   <!-- Included JS Files -->
   <?php foreach ($scripts as $script): ?>
@@ -38,7 +39,7 @@
         $email = array(
           'name'=>'email',
           'type'=>'text',
-          'placeholder'=>'John.smith@school.ca',
+          'placeholder'=>'Username or Email',
         );
         $password = array(
           'name'=>'password',
@@ -57,7 +58,7 @@
       ?>
       <?php echo $error;?>
       <?php echo form_open('oauth/login', $form)."\n";?>
-      <label>Email:</label>
+      <label>Username:</label>
 			<div class="row" id="user">
   				<div class="twelve columns">
     				<div class="row collapse">
@@ -93,7 +94,7 @@
       </div>
       <div class="row">
         <div class="twelve mobile-two columns">
-          <p>Version V0.01</p>
+          <p>Version v0.01</p>
         </div>
       </div>
       <?php //echo form_submit($forgot);?>
