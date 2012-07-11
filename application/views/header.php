@@ -54,6 +54,7 @@
                 'class'=>'icons'
               );
           ?>
+          <li class="user-details"><?php echo $firstname.', '.$lastname.' ('.$status.')';?></li>
           <li><?php echo anchor('profile','U', $class);?></li>
           <li><?php echo anchor('settings','S',$class);?></li>
           <li><?php echo anchor('questions','?',$class);?></li>

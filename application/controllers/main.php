@@ -36,10 +36,13 @@ class Main extends CI_Controller {
 		if($this->session->userdata('session_id')){
 			$this->data['firstname'] = $this->session->userdata('first_name');
 			$this->data['lastname'] = $this->session->userdata('last_name');
+			$this->data['status'] = $this->session->userdata('status');
+			$this->data['check'] = $this->session->userdata('logged_in');
 		}
 		else{
 			$this->data['firstname'] = '';
 			$this->data['lastname'] = '';
+			$this->data['check'] = $this->session->userdata('logged_in');
 		}
 	}
 	public function _remap($method)
@@ -68,7 +71,7 @@ class Main extends CI_Controller {
 									</div>';
 			$this->load->view('welcome', $this->data);
 		}
-		else if( $check ){
+		else if( $this->data['check'] ){
 			redirect('u/', 'location');
 		}
 		else{
@@ -77,14 +80,14 @@ class Main extends CI_Controller {
 	}
 	function main_user()
 	{
-		$check = $this->session->userdata('logged_in');
-		if( $check ){
+		$this->data['status'] = $this->session->userdata('status');
+		if( $this->data['check'] ){
 			$this->data['title'] = 'DalDMS - '.$this->data['firstname'];
 			$this->load->view('header', $this->data);
 			$this->load->view('body', $this->data);
 			$this->load->view('footer', $this->data);
 		}
-		else if( !$check ){
+		else if( !$this->data['check'] ){
 			redirect('auth_fail/', 'location');
 		}
 	}

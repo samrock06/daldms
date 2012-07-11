@@ -80,6 +80,10 @@ body{
     margin:0.5em 0.5em;
     text-transform:uppercase;
 }
+#header ul.nav li.user-details{
+    color:#eee;
+    text-transform:none;
+}
 #header ul.nav li.nav-divider{
     border-right:1px solid rgba(71, 71, 71, 1);
 }

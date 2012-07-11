@@ -21,6 +21,7 @@ class Dms_model extends CI_Model{
                         'first_name'     => $rows->firstname,
                         'last_name'     => $rows->lastname,
                         'user_email'    => $rows->email,
+                        'status'		=> $rows->status,
                         'logged_in'     => TRUE,
                 );
             }
@@ -36,21 +37,21 @@ class Dms_model extends CI_Model{
         
         if($query->num_rows()>0){
         	$data=array(
-                'firstname'=>'Samuel',
-                'lastname'=>'Peter',
-                'email'=>'samrock06@gmail.com',
-                'password'=>md5('sqlroot'),
+                'firstname'=>'Kevin',
+                'lastname'=>'Smith',
+                'email'=>'ksmith@dal.ca',
+                'password'=>md5('sqlroot2'),
                 'status'=>'admin'
         	);
         	$this->db->insert('users',$data);
     	}
     	else{
     		$data=array(
-                'firstname'=>'Samuel',
-                'lastname'=>'Peter',
-                'email'=>'samrock06@gmail.com',
-                'password'=>md5('sqlroot'),
-                'status'=>'admin'
+                'firstname'=>'Kevin',
+                'lastname'=>'Smith',
+                'email'=>'ksmith@dal.ca',
+                'password'=>md5('sqlroot2'),
+                'status'=>'professor'
         	);
         	$this->db->insert('users',$data);
     	}
