@@ -1,0 +1,109 @@
+/* --------------------------------------------------
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Navigation/Header
+*/
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+html{
+	padding:0;
+	margin:0;
+}
+body{
+	padding:0;
+	margin:0;
+}
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('../fonts/websymbols-regular-webfont.eot');
+    src: url('../fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/websymbols-regular-webfont.woff') format('woff'),
+         url('../fonts/websymbols-regular-webfont.ttf') format('truetype'),
+         url('../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.icons{
+	font-family: 'WebSymbolsRegular';
+}
+/* -----------------------------------------
+   Navigation/Header
+----------------------------------------- */
+#header{
+    position: fixed;
+    top:0;
+    width:100%;
+    padding-top:5px;
+    padding-bottom:5px;
+    background:rgba(0, 0, 0, 0.9);
+    background:#000;
+    z-index:640;
+    overflow: hidden;
+    box-shadow:0 0 10px #000;
+    margin-bottom:1em;
+}
+#header #navigation ul.branding{
+
+}
+#header #navigation a.brand{
+    font-size:0.9em;
+    color:#fff;
+    text-shadow:0 -1px 1px rgba(0,0,0,0.5); 
+    padding:10px 20px;
+}
+#header .twelve.columns{
+    padding:5px 0;
+}
+#header ul.branding{
+    display:block;
+    float:left;
+    margin-top:0.2em;
+    margin-bottom:0.2em;
+    padding:0;
+}
+#header ul.branding li{
+    display:inline;
+    margin:0.5em 0.5em;
+}
+#header ul.nav{
+    display:block;
+    float:right;
+    margin-top:0.2em;
+    margin-bottom:0;
+}
+#header ul.nav li{
+    display:inline;
+    margin:0.5em 0.5em;
+    text-transform:uppercase;
+}
+#header ul.nav li.nav-divider{
+    border-right:1px solid rgba(71, 71, 71, 1);
+}
+#header ul.nav li a{
+    font-weight:600;
+    text-shadow:0 -1px 1px rgba(0,0,0,0.5); 
+}
+@media all and (max-width:479px){
+    #header ul.nav{
+        display:none;
+    }
+}
+/* -----------------------------------------
+   Content
+----------------------------------------- */
+#content{
+    margin-top:4.5em;
+}
+#content h5{
+    margin-top:0.4em;
+}
+#content #search{
+    
+}
+#content #tab-area{
+    margin-top: 1em;
+}

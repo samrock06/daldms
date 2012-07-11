@@ -5,15 +5,20 @@
 -----------------------------------------------------
 :: Shared Styles
 :: Login Page
-:: Page Name 2
+:: Navigation/Header
 */
 
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
-
+html{
+	padding:0;
+	margin:0;
+}
 body{
 	background: url('../images/escheresque.png');
+	padding:0;
+	margin:0;
 }
 @font-face {
     font-family: 'WebSymbolsRegular';
@@ -63,8 +68,6 @@ input[type="password"][disabled]{background-color:#ddd}
 a.forgot{
 	padding-top: 10px;
 }
-
-
 /* -----------------------------------------
    Page Name 2
 ----------------------------------------- */

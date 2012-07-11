@@ -38,11 +38,13 @@
         $email = array(
           'name'=>'email',
           'type'=>'text',
-          'placeholder'=>'John.smith@school.ca'
+          'placeholder'=>'John.smith@school.ca',
+          'class'=>$error
         );
         $password = array(
           'name'=>'password',
-          'placeholder'=>'password'
+          'placeholder'=>'password',
+          'class'=>$error
         );
         $login = array(
           'name'=>'loginsubmit',

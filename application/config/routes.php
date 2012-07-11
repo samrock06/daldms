@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "main";
-$route['^(land|songs|users|u)(/:any)?$'] = 'main/$0';
+$route['^(i|u|auth_fail)(/:any)?$'] = 'main/$0';
 $route['login']="oauth/login";
 $route['404_override'] = '';
 

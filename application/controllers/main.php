@@ -20,6 +20,8 @@ class Main extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->data['base_url']=base_url();
+		$this->load->model('dms_model');
+		$this->data['error'] = '';
 		$this->data['scripts']=array(
 				'javascripts/jquery.min.js',
 				'javascripts/app.js',
@@ -30,30 +32,52 @@ class Main extends CI_Controller {
 				'javascripts/modernizr.foundation.js',
 				'javascripts/script.js'
 			);
+		if($this->session->userdata('session_id')){
+			$this->data['firstname'] = $this->session->userdata('first_name');
+			$this->data['lastname'] = $this->session->userdata('last_name');
+		}
+		else{
+			$this->data['firstname'] = '';
+			$this->data['lastname'] = '';
+		}
 	}
 	public function _remap($method)
 	{
 		if($method == 'u')
 		{
-			$this->professor = $this->uri->segment(3);
-			$this->main_user($this->professor);	
+			$this->main_user();	
+		}
+		else if($method == 'i'){
+			$this->main_insert();
+		}
+		else if($method == 'auth_fail'){
+			$this->index(1);
 		}
 		else
 		{
 			$this->index();
 		}
 	}
-	public function index()
+	public function index($code=NULL)
 	{
 		$this->data['title']='DalDMS - Login';
+		if($code == 1){
+			$this->data['error'] = 'error';
+		}
 		$this->load->view('welcome', $this->data);
 	}
-	function main_user($username=NULL){
-		$this->data['title'] = 'DalDMS - '.$username;
-		$this->data['user'] = $username;
-		$this->data['header'] = $this->load->view('header', $this->data);
-		$this->data['body'] = $this->load->view('body', $this->data);
-		$this->data['footer'] = $this->load->view('footer', $this->data);
+	function main_user()
+	{
+		$this->data['session'] = $this->session->all_userdata();
+		$this->data['title'] = 'DalDMS - '.$this->data['firstname'];
+		$this->load->view('header', $this->data);
+		$this->load->view('body', $this->data);
+		$this->load->view('footer', $this->data);
+	}
+	function main_insert()
+	{
+		$result=$this->dms_model->add_user();
+		$this->index();
 	}
 }
 

@@ -2,17 +2,18 @@
 class Oauth extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('dms_model');
 	}
 	function login($email = NULL, $password = NULL){
 		$email=$this->input->post('email');
         $password=md5($this->input->post('password'));
 
-        //$result=$this->deal_model->login($email,$password);
-        $result = explode("@", $email);
-        if($email) 
-        	redirect('main/u/'.$result[0], 'location');
+        $result=$this->dms_model->login($email,$password);
+
+        if($result) 
+        	redirect('u/'.$result[0], 'location');
         else        
-        	redirect('/oauth/1', 'location');
+        	redirect('auth_fail/', 'location');
 	}
 	function logout()
     {
