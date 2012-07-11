@@ -49,10 +49,8 @@ Login For Testcase Users
 ========================
 
 email:samrock06@gmail.com
-
 pass:sqlroot
 
 email:ksmith@dal.ca
-
 pass:sqlroot
 
