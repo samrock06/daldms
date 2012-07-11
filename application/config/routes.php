@@ -40,7 +40,8 @@
 
 $route['default_controller'] = "main";
 $route['^(i|u|auth_fail)(/:any)?$'] = 'main/$0';
-$route['login']="oauth/login";
+$route['^(login|logout)(/:any)']="oauth/$0";
+
 $route['404_override'] = '';
 
 

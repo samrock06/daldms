@@ -32,6 +32,7 @@ class Main extends CI_Controller {
 				'javascripts/modernizr.foundation.js',
 				'javascripts/script.js'
 			);
+		$this->data['code'] = '';
 		if($this->session->userdata('session_id')){
 			$this->data['firstname'] = $this->session->userdata('first_name');
 			$this->data['lastname'] = $this->session->userdata('last_name');
@@ -50,29 +51,42 @@ class Main extends CI_Controller {
 		else if($method == 'i'){
 			$this->main_insert();
 		}
-		else if($method == 'auth_fail'){
-			$this->index(1);
-		}
 		else
 		{
 			$this->index();
 		}
 	}
-	public function index($code=NULL)
+	public function index()
 	{
+		$check = $this->session->userdata('logged_in');
+		$this->data['code'] = $this->uri->segment(1);
 		$this->data['title']='DalDMS - Login';
-		if($code == 1){
-			$this->data['error'] = 'error';
+		if($this->data['code'] == 'auth_fail'){
+			$this->data['error'] = '<div class="alert-box [success alert secondary]">
+  										Incorrect Username or Password
+  										<a href="" class="close">&times;</a>
+									</div>';
+			$this->load->view('welcome', $this->data);
 		}
-		$this->load->view('welcome', $this->data);
+		else if( $check ){
+			redirect('u/', 'location');
+		}
+		else{
+			$this->load->view('welcome', $this->data);
+		}
 	}
 	function main_user()
 	{
-		$this->data['session'] = $this->session->all_userdata();
-		$this->data['title'] = 'DalDMS - '.$this->data['firstname'];
-		$this->load->view('header', $this->data);
-		$this->load->view('body', $this->data);
-		$this->load->view('footer', $this->data);
+		$check = $this->session->userdata('logged_in');
+		if( $check ){
+			$this->data['title'] = 'DalDMS - '.$this->data['firstname'];
+			$this->load->view('header', $this->data);
+			$this->load->view('body', $this->data);
+			$this->load->view('footer', $this->data);
+		}
+		else if( !$check ){
+			redirect('auth_fail/', 'location');
+		}
 	}
 	function main_insert()
 	{

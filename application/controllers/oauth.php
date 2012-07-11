@@ -11,7 +11,7 @@ class Oauth extends CI_Controller{
         $result=$this->dms_model->login($email,$password);
 
         if($result) 
-        	redirect('u/'.$result[0], 'location');
+        	redirect('u/', 'location');
         else        
         	redirect('auth_fail/', 'location');
 	}
@@ -24,9 +24,9 @@ class Oauth extends CI_Controller{
         	'user_email'     => '',
         	'logged_in' => FALSE,
         );
-        $this->session->unset_userdata($newdata );
+        $this->session->unset_userdata($newdata);
         $this->session->sess_destroy();
-        redirect('/city/Abuja', 'location');
+        redirect('/', 'location');
     }
 }
 ?>

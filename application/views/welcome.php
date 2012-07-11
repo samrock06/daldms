@@ -39,12 +39,10 @@
           'name'=>'email',
           'type'=>'text',
           'placeholder'=>'John.smith@school.ca',
-          'class'=>$error
         );
         $password = array(
           'name'=>'password',
           'placeholder'=>'password',
-          'class'=>$error
         );
         $login = array(
           'name'=>'loginsubmit',
@@ -57,10 +55,10 @@
           'class'=>'medium radius secondary button'
         );
       ?>
-
+      <?php echo $error;?>
       <?php echo form_open('oauth/login', $form)."\n";?>
       <label>Email:</label>
-			<div class="row">
+			<div class="row" id="user">
   				<div class="twelve columns">
     				<div class="row collapse">
       					<div class="one mobile-one columns">
@@ -74,7 +72,7 @@
 			</div>
 
       <label>Password:</label>
-			<div class="row">
+			<div class="row" id="pass">
   				<div class="twelve columns">
     				<div class="row collapse">
       					<div class="one mobile-one columns">
@@ -88,17 +86,7 @@
 			</div>
 
       <div class="row choice">
-        <div class="six mobile-two columns">
-          <div class="custom dropdown">
-            <a href="#" class="current">Professor</a>
-            <a href="#" class="selector"></a>
-            <ul>
-              <li>Professor</li>
-              <li>Admin</li>
-              </ul>
-          </div>
-        </div>
-        <div class="six mobile-two columns">
+        <div class="twelve mobile-four columns">
           <?php echo form_submit($login)."\n";?>
           <?php echo anchor('#', 'Forgot your password?', 'title="Forgot password"', 'class="forgot"')."\n";?>
         </div>
