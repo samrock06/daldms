@@ -31,7 +31,7 @@
 	<![endif]-->
 </head>
 <body>
-<!--<body onload = removeHash();>-->
+<body onload = removeHash();>
 <!--=====================================
   HEADER SECTION
 ======================================-->

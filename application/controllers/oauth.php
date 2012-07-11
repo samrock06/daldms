@@ -5,15 +5,23 @@ class Oauth extends CI_Controller{
 		$this->load->model('dms_model');
 	}
 	function login($email = NULL, $password = NULL){
-		$email=$this->input->post('email');
-        $password=md5($this->input->post('password'));
 
-        $result=$this->dms_model->login($email,$password);
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+		
+		if ($this->form_validation->run() == FALSE){
+			redirect('auth_fail/', 'location');
+		}
+		else{
+			$email=$this->input->post('email');
+        	$password=md5($this->input->post('password'));
 
-        if($result) 
-        	redirect('u/', 'location');
-        else        
-        	redirect('auth_fail/', 'location');
+        	$result=$this->dms_model->login($email,$password);
+			if($result) 
+        		redirect('u/', 'location');
+        	else        
+        		redirect('auth_fail/', 'location');
+		}
 	}
 	function logout()
     {
@@ -27,6 +35,11 @@ class Oauth extends CI_Controller{
         $this->session->unset_userdata($newdata);
         $this->session->sess_destroy();
         redirect('/', 'location');
+    }
+    function search()
+    {
+    	$this->dms_model->search($this->input->post('search'));
+		redirect('u#search', 'location');
     }
 }
 ?>

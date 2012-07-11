@@ -19,6 +19,10 @@ class Main extends CI_Controller {
 	 */
 	public function __construct(){
 		parent::__construct();
+		$config['base_url'] = 'http://localhost:8888/daldms/u/search';
+		$config['total_rows'] = 200;
+		$config['per_page'] = 20;
+		$this->pagination->initialize($config); 
 		$this->data['base_url']=base_url();
 		$this->load->model('dms_model');
 		$this->data['error'] = '';
@@ -83,9 +87,6 @@ class Main extends CI_Controller {
 	{
 		$this->data['status'] = $this->session->userdata('status');
 		if( $this->data['check'] ){
-			if($this->uri->segment(2) == 'search'){
-				
-			}
 			$this->data['title'] = 'DalDMS - '.$this->data['firstname'];
 			$this->load->view('header', $this->data);
 			$this->load->view('body', $this->data);

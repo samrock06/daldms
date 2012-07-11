@@ -13,20 +13,20 @@
           'name'=>'search',
           'type'=>'text',
           'placeholder'=>'Search',
-          'class'=>$error
         );
         $search = array(
-          'title'=>'search',
+        	'name'=>'submit',
+        	'value'=>'L',
           'class'=>'postfix secondary button icons'
         );
         ?>
 				<div class="row collapse">
-				<?php echo form_open('u/search')."\n";?>
+				<?php echo form_open('oauth/search')."\n";?>
       		<div class="ten mobile-three columns">
        		 <?php echo form_input($input)."\n";?>
       		</div>
       		<div class="two mobile-one columns">
-        		<?php echo anchor('#', 'L', $search)."\n";?>
+        		<?php echo form_submit($search)."\n";?>
       		</div>
       	<?php echo form_close()."\n";?>
     		</div>
@@ -104,7 +104,25 @@
   					</div><!-- End of list Row -->
   				</li>
   				<li id="profileTab">This is simple tab 2's content. Now you see it!</li>
-  				<li id="searchTab">This is simple tab 3's content. It's, you know...okay.</li>
+  				<li id="searchTab">
+  					<div class="row">
+  						<div class="three mobile-four columns">
+  							<?php
+  								$list = $this->session->userdata('search');
+									echo heading('Search History', 6)."\n";
+  								echo ul($list)."\n";
+  							?>
+  						</div>
+  						<div class="nine mobile-four columns">
+  							<?php 
+  								var_dump($this->session->userdata('search'));
+  								echo ul($list)."\n";
+  								echo '<br>'."\n";
+  								echo $this->pagination->create_links()."\n";
+  							?>
+  						</div>
+  					</div>
+  				</li>
   				<?php
   					if( $status === "admin"){
   						echo '<li id="adminTab">This is simple tab 4\'s content. It\'s, you know...okay.</li>'."\n";

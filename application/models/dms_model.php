@@ -1,5 +1,6 @@
 <?php
 class Dms_model extends CI_Model{
+	var $archive = array();
 	public function __construct()
 	{
 		$this->load->database();
@@ -32,6 +33,7 @@ class Dms_model extends CI_Model{
                         'last_name'     => $rows->lastname,
                         'user_email'    => $rows->email,
                         'status'		=> $rows->status,
+                        'search'		=> array(),
                         'logged_in'     => TRUE,
                 );
             }
@@ -43,6 +45,8 @@ class Dms_model extends CI_Model{
     function search($term){
     	$entire_term = $term;
     	$split_term = explode(" ", $term);
+    	array_push($this->archive, $term);
+    	$this->session->set_userdata('search', $this->archive);
     }
     function add_user($email=NULL)
     {
