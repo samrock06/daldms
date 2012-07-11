@@ -36,6 +36,11 @@
   HEADER SECTION
 ======================================-->
 <header id="header">
+  <?php
+    $class=array(
+        'class'=>'raphael'
+    );
+  ?>
   <div class="container">
     <div class="row">
       <div class="seven mobile-four columns" id="navigation">
@@ -48,16 +53,12 @@
             echo anchor('/','DalDMS', $attr);
             ?>
           </li>
+          <li class="mobile-logout"><?php echo anchor('oauth/logout','Ï',$class);?></li>
         </ul>
       </div>
       <div class="five mobile-four columns" id="navigation">
         <ul class="nav hide-on-phones">
-          <?php
-            $class=array(
-                'class'=>'raphael'
-              );
-          ?>
-          <li class="user-details"><?php echo ucfirst($status);?></li>
+          <li class="user-details"><?php echo 'Status: '.ucfirst($status);?></li>
           <li class="nav-divider"></li>
           <li><?php echo anchor('u/','S',$class);?></li>
           <li><?php echo anchor('#profile','L', $class);?></li>

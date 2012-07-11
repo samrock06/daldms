@@ -22,6 +22,7 @@ class Main extends CI_Controller {
 		$this->data['base_url']=base_url();
 		$this->load->model('dms_model');
 		$this->data['error'] = '';
+		$this->data['search'] = '';
 		$this->data['scripts']=array(
 				'javascripts/jquery.min.js',
 				'javascripts/app.js',
@@ -82,6 +83,9 @@ class Main extends CI_Controller {
 	{
 		$this->data['status'] = $this->session->userdata('status');
 		if( $this->data['check'] ){
+			if($this->uri->segment(2) == 'search'){
+				
+			}
 			$this->data['title'] = 'DalDMS - '.$this->data['firstname'];
 			$this->load->view('header', $this->data);
 			$this->load->view('body', $this->data);

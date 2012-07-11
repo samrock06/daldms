@@ -40,6 +40,10 @@ class Dms_model extends CI_Model{
         }
         return false;
     }
+    function search($term){
+    	$entire_term = $term;
+    	$split_term = explode(" ", $term);
+    }
     function add_user($email=NULL)
     {
     	$this->db->where("email",$email);

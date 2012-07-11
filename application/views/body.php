@@ -21,7 +21,7 @@
         );
         ?>
 				<div class="row collapse">
-				<?php echo form_open('search')."\n";?>
+				<?php echo form_open('u/search')."\n";?>
       		<div class="ten mobile-three columns">
        		 <?php echo form_input($input)."\n";?>
       		</div>

@@ -63,8 +63,8 @@ body{
     box-shadow:0 0 10px #000;
     margin-bottom:1em;
 }
-#header #navigation ul.branding{
-
+#header #navigation ul.branding li.mobile-logout{
+    display: none;
 }
 #header #navigation a.brand{
     position: relative;
@@ -187,14 +187,20 @@ body{
    Media
 ----------------------------------------- */
 @media all and (max-width:478px){
+    #header #navigation ul.branding li.mobile-logout{
+        display: block;
+    }
+    #header ul.branding li{
+        float:left;
+    }
     #header ul.nav{
         display:none;
     }
     #search{
-        margin-top:2.7em;
+        margin-top:3.9em;
         background: rgba(255, 255, 255, 0.5);
     }
-    #search .container.user .row .eight h5{
+    #search .container.user .row .eight h6{
         position: relative;
         top:0.2em;
     }
@@ -207,32 +213,44 @@ body{
         margin-bottom: -0.5em;
     }
     #content{
-        margin-top:2.5em;
+        margin-top:2em;
         padding:0;
     }
     #content .container.wrap{
         margin-left: 0;
         margin-right: 0;
     }
+    #content .container.wrap #outline h5, #content .container.wrap #outline h6{
+        padding-left: 5px;
+    }
 }
 @media all and (max-width:798px){
+    #header #navigation ul.branding li.mobile-logout{
+        display: block;
+    }
+    #header ul.branding li{
+        float:left;
+    }
     #header ul.nav{
         display:none;
     }
     #search{
-        margin-top:2.7em;
+        margin-top:3.9em;
         background: rgba(255, 255, 255, 0.5);
     }
-    #search .container.user .row .eight h5{
+    #search .container.user .row .eight h6{
         position: relative;
         top:0.2em;
     }
     #content{
-        margin-top:2.5em;
+        margin-top:2em;
         padding:0;
     }
     #content .container.wrap{
         margin-left: 0;
         margin-right: 0;
+    }
+    #content .container.wrap #outline h5, #content .container.wrap #outline h6{
+        padding-left: 5px;
     }
 }
