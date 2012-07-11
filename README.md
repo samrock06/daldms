@@ -42,16 +42,17 @@ CREATE TABLE `ci_sessions` (
   PRIMARY KEY (`session_id`),
 
   KEY `last_activity_idx` (`last_activity`)
-  
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `ci_sessions`
---
+Login For Testcase Users
+========================
 
 email:samrock06@gmail.com
+
 pass:sqlroot
 
 email:ksmith@dal.ca
+
 pass:sqlroot
 
