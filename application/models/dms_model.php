@@ -29,6 +29,7 @@ class Dms_model extends CI_Model{
                 $newdata = array(
                         'user_id'     => $rows->user_id,
                         'user_name'		=>$rows->username,
+                        'title'			=>$rows->title,
                         'first_name'     => $rows->firstname,
                         'last_name'     => $rows->lastname,
                         'user_email'    => $rows->email,
@@ -38,9 +39,17 @@ class Dms_model extends CI_Model{
                 );
             }
             $this->session->set_userdata($newdata);
+
             return true;
         }
         return false;
+    }
+    function getCourse(){
+    	$course = array();
+    	$userid = $this->session->userdata('user_id');
+    	$this->db->where("prof_id", $userid);
+    	$query=$this->db->get("course");
+		return $query;
     }
     function search($term){
     	$entire_term = $term;

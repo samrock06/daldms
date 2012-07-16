@@ -36,10 +36,5 @@ class Oauth extends CI_Controller{
         $this->session->sess_destroy();
         redirect('/', 'location');
     }
-    function search()
-    {
-    	$this->dms_model->search($this->input->post('search'));
-		redirect('u#search', 'location');
-    }
 }
 ?>

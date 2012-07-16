@@ -13,7 +13,7 @@ html{
 	margin:0;
 }
 body{
-    background: url('../images/bullseyes.png');
+    background: url('../images/escheresque.png');
 	padding:0;
 	margin:0 auto;
 }
@@ -42,8 +42,7 @@ body{
 	font-family: 'WebSymbolsRegular';
 }
 .raphael{
-    font-family:'RaphaelIcons';
-    font-size: 1.5em;
+
 }
 /* -----------------------------------------
    Navigation/Header
@@ -54,9 +53,9 @@ body{
     width:100%;
     padding-top:5px;
     padding-bottom:5px;
-    background:rgba(51, 51, 51, 1);
+    background:rgba(51, 51, 51, 0.7);
     background:#333;
-    border-top:3px solid rgba(46, 166, 203, 1);
+    border-top:4px solid rgba(46, 166, 203, 1);
     border-top:3px solid #2ba6cb;
     z-index:640;
     overflow: hidden;
@@ -82,9 +81,9 @@ body{
 }
 #header ul.branding{
     display:block;
-    float:left;
+    float:right;
     margin-top:0.2em;
-    margin-bottom:0.2em;
+    margin-bottom:0.4em;
     padding:0;
 }
 #header ul.branding li{
@@ -92,10 +91,9 @@ body{
     margin:0.5em 0.5em;
 }
 #header ul.nav{
-    display:block;
-    float:right;
+    display:block; 
     margin-top:0.2em;
-    margin-bottom:0;
+    margin-bottom:0.4em;
 }
 #header ul.nav li{
     display:inline;
@@ -104,7 +102,6 @@ body{
 }
 #header ul.nav li.user-details{
     position: relative;
-    top:-0.25em;
     color:rgba(141, 141, 146, 1);
     color:#8d8d92;
     text-transform:none;
@@ -120,12 +117,22 @@ body{
     padding-bottom: 4em;
 }
 #header ul.nav li a{
-    font-weight:600;
+    font-weight:400;
+    font-size:0.8em;
     text-shadow:0 -1px 1px rgba(0,0,0,0.5); 
+    text-transform: none;
+}
+#header ul.nav li a span.raphael{
+    font-family:'RaphaelIcons';
+    font-size: 1.5em;
+    font-weight:600;
 }
 /* -----------------------------------------
    Search/User
 ----------------------------------------- */
+#search-bar{
+    border-bottom: 1px solid #ddd;
+}
 #search{
     margin-top:3.45em;
     margin-bottom: -2em;
@@ -159,10 +166,10 @@ body{
 }
 #content .container.wrap{
      background:  rgba(255, 255, 255, 1);
-     border-radius: 3px;
      margin-left: 3em;
      margin-right: 3em;
      padding:10px 0;
+     box-shadow: 0 0 10px rgba(200, 200, 200, 1);
 }
 #content .container.wrap h5{
     margin-top:0.4em;
@@ -174,7 +181,7 @@ body{
     margin-top: 1em;
 }
 #content .container.wrap #outline p{
-    padding:0 10px;
+    padding:0 0px;
     font-size: 0.95em;
 }
 #content .container.wrap #outline ul.outline-details{
@@ -195,6 +202,11 @@ body{
     }
     #header ul.nav{
         display:none;
+    }
+    #header ul.branding li a span.raphael{
+        font-family:'RaphaelIcons';
+        font-size: 1.5em;
+        font-weight:600;
     }
     #search{
         margin-top:3.9em;
@@ -233,6 +245,11 @@ body{
     }
     #header ul.nav{
         display:none;
+    }
+    #header ul.branding li a span.raphael{
+        font-family:'RaphaelIcons';
+        font-size: 1.5em;
+        font-weight:600;
     }
     #search{
         margin-top:3.9em;

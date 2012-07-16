@@ -36,34 +36,30 @@
   HEADER SECTION
 ======================================-->
 <header id="header">
-  <?php
-    $class=array(
-        'class'=>'raphael'
-    );
-  ?>
   <div class="container">
     <div class="row">
-      <div class="seven mobile-four columns" id="navigation">
+      <div class="nine mobile-four columns" id="navigation">
+        <ul class="nav hide-on-phones">
+          <li class="user-details"><?php echo $firstname.' '.$lastname.' ('.ucfirst($status).')';?></li>
+          <li class="nav-divider"></li>
+          <li><a href="<?php echo $base_url;?>u/"><span class="raphael">S</span> Home</a></li>
+          <li><a href="<?php echo $base_url;?>u/profile"><span class="raphael">L</span> Profile</a></li>
+          <li><a href="<?php echo $base_url;?>u/course"><span class="raphael">Û</span> Course</a></li>
+          <li><a href="<?php echo $base_url;?>oauth/logout"><span class="raphael">Ï</span> Logout</a></li>
+        </ul>
+      </div>
+      <div class="three mobile-four columns" id="navigation">
         <ul class="branding">
           <li><?php 
             $attr = array(
               'title' => 'Brand',
-              'class' => 'brand'
+              'class' => 'brand',
+
             );
             echo anchor('/','DalDMS', $attr);
             ?>
           </li>
-          <li class="mobile-logout"><?php echo anchor('oauth/logout','Ï',$class);?></li>
-        </ul>
-      </div>
-      <div class="five mobile-four columns" id="navigation">
-        <ul class="nav hide-on-phones">
-          <li class="user-details"><?php echo 'Status: '.ucfirst($status);?></li>
-          <li class="nav-divider"></li>
-          <li><?php echo anchor('u/','S',$class);?></li>
-          <li><?php echo anchor('#profile','L', $class);?></li>
-          <li><?php echo anchor('settings','`',$class);?></li>
-          <li><?php echo anchor('oauth/logout','Ï',$class);?></li>
+          <li class="mobile-logout"><a href="<?php echo $base_url;?>oauth/logout"><span class="raphael">Ï</span></a></li>
         </ul>
       </div>
     </div>

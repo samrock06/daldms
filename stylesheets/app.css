@@ -16,7 +16,7 @@ html{
 	margin:0;
 }
 body{
-	background: url('../images/bullseyes.png');
+	background: url('../images/escheresque.png');
 	padding:0;
 	margin:0;
 }
@@ -53,7 +53,7 @@ input[type="password"][disabled]{background-color:#ddd}
 	margin-bottom: 20px;
 }
 #login .row .six.info h6, #login .row .six.info h1{font-family: 'Marmelad', sans-serif;text-shadow:0 -1px 0 rgba(0,0,0,0.15); padding-left:10px;}
-#login form{padding:15px;background: rgba(0, 0, 0, 0.8);border-radius: 3px;box-shadow: 0 0 3px #555;}
+#login form{padding:15px;background: rgba(0, 0, 0, 0.7);border-radius: 3px;box-shadow: 0 0 3px #555;}
 #login form label{color:#eee; padding:5px;}
 #login .choice{
 	margin-bottom: 1em;
