@@ -46,7 +46,7 @@
       'name'=>'submit',
       'id'=>'searchSubmit',
       'value'=>'L',
-      'class'=>'postfix secondary button icons'
+      'class'=>'postfix button icons'
     );
     ?>
     <div class="row collapse">
@@ -61,10 +61,15 @@
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row" id="inner-page-wrap">
   <div class="three mobile-four columns">
+    <img src="http://placehold.it/260x260" alt="">
+    <ul class="course-edit">
+      <li><a href="">Add</a></li>
+      <li><a href="">Edit</a></li>
+      <li><a href="">Delete</a></li>
+    </ul>
     <ul class="side-nav">
-      <li><a href="">Add Course</a></li>
     <?php
       foreach ($course_info as $value) {
         $url = str_replace(' ','',$value['code']);
@@ -86,6 +91,10 @@
       <p>
         <?php echo $user_title.' '.$firstname.' '.$lastname."\n";?>
       </p>
+      <h6>Course</h6>
+      <p>
+        <?php echo $course_code.' - '.$course_name."\n";?>
+      </p>
       <h6>Course Description</h6>
   		<p>
   			<?php echo $course_description."\n";?>
@@ -100,8 +109,8 @@
       </p>
       <h6>Capacity</h6>
       <ul>
-        <li>Lectures: <?php echo $course_lec_cap;?></li>
-        <li>Labs: <?php echo $course_lab_cap;?></li>
+        <li>Lecture: <?php echo $course_lec_cap;?></li>
+        <li>Lab: <?php echo $course_lab_cap;?></li>
       </ul>
       <h6>Links</h6>
       <ul>

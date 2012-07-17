@@ -48,7 +48,7 @@ body{
    Navigation/Header
 ----------------------------------------- */
 #header{
-    position: fixed;
+    position: relative;
     top:0;
     width:100%;
     padding-top:5px;
@@ -60,7 +60,7 @@ body{
     z-index:640;
     overflow: hidden;
     box-shadow:0 0 10px #000;
-    margin-bottom:1em;
+    margin-bottom:0.1em;
 }
 #header #navigation ul.branding li.mobile-logout{
     display: none;
@@ -106,7 +106,7 @@ body{
     color:#8d8d92;
     text-transform:none;
     font-weight: 500;
-    font-size:1.1em;
+    font-size:0.9em;
 }
 #header ul.nav li.nav-divider{
     border-right:1px solid rgba(61, 61, 61, 0.6);
@@ -118,7 +118,7 @@ body{
 }
 #header ul.nav li a{
     font-weight:400;
-    font-size:0.8em;
+    font-size:0.9em;
     text-shadow:0 -1px 1px rgba(0,0,0,0.5); 
     text-transform: none;
 }
@@ -157,7 +157,7 @@ body{
    Content
 ----------------------------------------- */
 #content{
-    margin-top:1em;
+    margin-top:0.1em;
     padding:25px 90px;
 }
 #content .container.user .row .eight h5{
@@ -189,6 +189,43 @@ body{
 }
 #content .container.wrap #outline ul.outline-details li{
     font-size: 0.9em;
+}
+/* -----------------------------------------
+   Course
+----------------------------------------- */
+#content .container.wrap #inner-page-wrap .three img{
+    padding:3px;
+    margin-top: 1em;
+    border:1px solid #ddd;
+}
+#content .container.wrap #inner-page-wrap .three ul.course-edit{
+    padding:2px 4px;
+    margin-bottom: 0em;
+    border-bottom: 1px dotted #ddd;
+}
+#content .container.wrap #inner-page-wrap .three ul.course-edit li{
+    display: inline-block;
+    margin-right: 0.3em;
+}
+#content .container.wrap #inner-page-wrap .three ul.side-nav{
+    padding:5px 4px;
+    margin-top: 0em;
+}
+/* -----------------------------------------
+   Footer
+----------------------------------------- */
+#footer{
+    background: rgba(63, 63, 63, 1);
+    background: #3f3f3f;
+}
+#footer p{
+    color: #eee;
+    margin-top: 0.6em;
+    margin-bottom: -0.5em;
+}
+#footer ul{
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
 }
 /* -----------------------------------------
    Media

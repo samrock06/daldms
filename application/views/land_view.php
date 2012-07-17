@@ -17,7 +17,7 @@
       'name'=>'submit',
       'id'=>'searchSubmit',
       'value'=>'L',
-      'class'=>'postfix secondary button icons'
+      'class'=>'postfix button icons'
     );
     ?>
     <div class="row collapse">

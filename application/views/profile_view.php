@@ -17,7 +17,7 @@
       'name'=>'submit',
       'id'=>'searchSubmit',
       'value'=>'L',
-      'class'=>'postfix secondary button icons'
+      'class'=>'postfix button icons'
     );
     ?>
     <div class="row collapse">
@@ -30,5 +30,16 @@
         </div>
           <?php echo form_close()."\n";?>
     </div>
+  </div>
+</div>
+<div class="row" id="inner-page-wrap">
+  <div class="three mobile-four columns">
+    <img src="http://placehold.it/260x260" alt="">
+    <ul class="course-edit">
+      
+    </ul>
+    <ul class="side-nav">
+
+  	</ul>
   </div>
 </div>

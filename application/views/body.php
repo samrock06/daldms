@@ -1,13 +1,3 @@
-<section id="search">
-	<div class="container user">
-		<div class="row">
-			<div class="eight mobile-four columns">
-				
-			</div>
-			
-		</div>
-	</div>
-</section>
 <section id="content">
 	<div class="container wrap">
 		<?php 
