@@ -217,6 +217,7 @@ body{
 #footer{
     background: rgba(63, 63, 63, 1);
     background: #3f3f3f;
+    border-top:2px solid #000;
 }
 #footer p{
     color: #eee;
