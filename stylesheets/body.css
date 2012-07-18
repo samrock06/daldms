@@ -111,6 +111,8 @@ body{
 #header ul.nav li{
     display:inline;
     margin:0.5em 0em;
+    padding-left: 0;
+    padding-right: 0;
     text-transform:uppercase;
 }
 #header ul.nav li.user-details{
