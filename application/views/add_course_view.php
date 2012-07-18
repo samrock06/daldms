@@ -91,7 +91,7 @@
 		'class'=>'medium radius button'
 	);
 	echo heading('Add a Course', 4)."\n";
-	echo form_open("u/add", $form)."\n";
+	echo form_open("/add", $form)."\n";
 
 	echo '<div class="row">'."\n";
 	echo '<div class="six mobile-three columns">'."\n";

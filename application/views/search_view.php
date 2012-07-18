@@ -29,7 +29,7 @@
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row" id="inner-page-wrap">
   <div class="three mobile-four columns">
   	<?php
   		$list = $this->session->userdata('search');
@@ -37,8 +37,9 @@
   		echo ul($list)."\n";
   	?>
   </div>
-  <div class="nine mobile-four columns">
+  <div class="nine mobile-four columns" id="outline">
   	<?php 
+      echo heading('Search Results', 4)."\n";
   		echo ul($list)."\n";
   		echo '<br>'."\n";
   		echo $this->pagination->create_links()."\n";

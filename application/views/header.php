@@ -40,11 +40,11 @@
     <div class="row">
       <div class="nine mobile-four columns" id="navigation">
         <ul class="nav hide-on-phones">
-          <li class="user-details"><?php echo $firstname.' '.$lastname.' ('.ucfirst($status).')';?></li>
+          <li class="user-details"><?php echo $user_title.' '.$lastname.' ('.ucfirst($status).')';?></li>
           <li class="nav-divider"></li>
-          <li><a href="<?php echo $base_url;?>u/"><span class="raphael">S</span> Home</a></li>
-          <li><a href="<?php echo $base_url;?>u/profile"><span class="raphael">L</span> Profile</a></li>
-          <li><a href="<?php echo $base_url;?>u/course"><span class="raphael">Û</span> Course(s)</a></li>
+          <li><a class="<?php echo $h_active;?>" href="<?php echo $base_url;?>u/"><span class="raphael">S</span> Home</a></li>
+          <li><a class="<?php echo $p_active;?>" href="<?php echo $base_url;?>u/profile"><span class="raphael">L</span> Profile</a></li>
+          <li><a class="<?php echo $c_active;?>" href="<?php echo $base_url;?>u/course"><span class="raphael">Û</span> Course(s)</a></li>
           <li><a href="<?php echo $base_url;?>oauth/logout"><span class="raphael">Ï</span> Logout</a></li>
         </ul>
       </div>

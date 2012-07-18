@@ -57,7 +57,7 @@ $course_info = array();
 
   	</ul>
   </div>
-  <div class="nine mobile-four columns">
+  <div class="nine mobile-four columns" id="outline">
   	<h6>Name</h6>
     <p>
       <?php echo $user_title.' '.$firstname.' '.$lastname."\n";?>

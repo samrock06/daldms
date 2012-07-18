@@ -28,6 +28,10 @@ class Main extends CI_Controller {
 		$this->data['course'] = '';
 		$this->data['error'] = '';
 		$this->data['search'] = '';
+		$this->data['h_active'] = '';
+		$this->data['p_active'] = '';
+		$this->data['c_active'] = '';
+
 		$this->data['scripts']=array(
 				'javascripts/jquery.min.js',
 				'javascripts/app.js',
@@ -50,6 +54,9 @@ class Main extends CI_Controller {
 		}
 		else if($method == 'i'){
 			$this->main_insert();
+		}
+		else if($method == 'add'){
+			$this->main_add_course();
 		}
 		else
 		{
@@ -100,6 +107,7 @@ class Main extends CI_Controller {
 		}
 
 		if( $this->data['check'] && $page === 'course'){
+			$this->data['c_active'] = 'active';
 			$segment = $this->uri->segment(3);
 			$single_course = array();
 
@@ -128,6 +136,7 @@ class Main extends CI_Controller {
 			$this->load->view('footer', $this->data);
 		}
 		else if($this->data['check'] && $page === 'profile'){
+			$this->data['p_active'] = 'active';
 			$this->data['status'] = $this->session->userdata('status');
 			$this->data['title'] = 'DalDMS - '.$this->data['firstname'];
 			$this->data['page'] = $page;
@@ -141,6 +150,7 @@ class Main extends CI_Controller {
 			$this->data['status'] = $this->session->userdata('status');
 			$this->data['title'] = 'DalDMS - '.$this->data['firstname'];
 			$this->data['page'] = $page;
+			$this->dms_model->search($this->input->post('search'));
 			$this->data['search'] = $this->load->view('search_view', $this->data, TRUE);
 
 			$this->load->view('header', $this->data);
@@ -153,6 +163,7 @@ class Main extends CI_Controller {
 		else{
 			$this->data['status'] = $this->session->userdata('status');
 			$this->data['title'] = 'DalDMS - '.$this->data['firstname'];
+			$this->data['h_active'] = 'active';
 			$this->data['page'] = $page;
 			$this->data['land'] = $this->load->view('land_view', $this->data, TRUE);
 
@@ -160,6 +171,9 @@ class Main extends CI_Controller {
 			$this->load->view('body', $this->data);
 			$this->load->view('footer', $this->data);
 		}
+	}
+	function main_add_course(){
+
 	}
 	function main_insert()
 	{
