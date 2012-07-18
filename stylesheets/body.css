@@ -1,0 +1,311 @@
+/* --------------------------------------------------
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Navigation/Header
+*/
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+html{
+	padding:0;
+	margin:0;
+}
+body{
+    background: url('../images/escheresque.png');
+	padding:0;
+	margin:0 auto;
+}
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('../fonts/websymbols-regular-webfont.eot');
+    src: url('../fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/websymbols-regular-webfont.woff') format('woff'),
+         url('../fonts/websymbols-regular-webfont.ttf') format('truetype'),
+         url('../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family:'RaphaelIcons';
+    src:url('../raphaelicons/raphaelicons-webfont.eot');
+    src:local('â˜º'), 
+        url('../raphaelicons/raphaelicons-webfont.woff') format('woff'), 
+        url('../raphaelicons/raphaelicons-webfont.ttf') format('truetype'), 
+        url('../raphaelicons/raphaelicons-webfont.svgwebfontKOf9F4sx') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.icons{
+	font-family: 'WebSymbolsRegular';
+}
+.raphael{
+
+}
+/* -----------------------------------------
+   Navigation/Header
+----------------------------------------- */
+#header{
+    position: relative;
+    top:0;
+    width:100%;
+    padding-top:5px;
+    padding-bottom:5px;
+    background:rgba(51, 51, 51, 0.7);
+    background:#333;
+    border-top:4px solid rgba(46, 166, 203, 1);
+    border-top:3px solid #2ba6cb;
+    z-index:640;
+    overflow: hidden;
+    box-shadow:0 0 10px #000;
+    margin-bottom:0.1em;
+}
+#header #navigation ul.branding li.mobile-logout{
+    display: none;
+}
+#header #navigation a.brand{
+    position: relative;
+    top:0.3em;
+    font-size:1.1em;
+    font-weight: 600;
+    color:rgba(141, 141, 146, 1);
+    color:#8d8d92;
+    text-shadow:0 -1px 1px rgba(0,0,0,0.5); 
+    padding:5px 0px;
+    margin-top: 1em;
+}
+#header .twelve.columns{
+    padding:5px 0;
+}
+#header ul.branding{
+    display:block;
+    float:right;
+    margin-top:0.2em;
+    margin-bottom:0.4em;
+    padding:0;
+}
+#header ul.branding li{
+    display:inline;
+    margin:0.5em 0.5em;
+}
+#header ul.nav{
+    display:block; 
+    margin-top:0.2em;
+    margin-bottom:0.4em;
+}
+#header ul.nav li{
+    display:inline;
+    margin:0.5em 0.5em;
+    text-transform:uppercase;
+}
+#header ul.nav li.user-details{
+    position: relative;
+    color:rgba(141, 141, 146, 1);
+    color:#8d8d92;
+    text-transform:none;
+    font-weight: 500;
+    font-size:0.9em;
+}
+#header ul.nav li.nav-divider{
+    border-right:1px solid rgba(61, 61, 61, 0.6);
+    border-left:1px solid rgba(31, 31, 31, 1);
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+#header ul.nav li a{
+    font-weight:400;
+    font-size:0.9em;
+    text-shadow:0 -1px 1px rgba(0,0,0,0.5); 
+    text-transform: none;
+}
+#header ul.nav li a span.raphael{
+    font-family:'RaphaelIcons';
+    font-size: 1.5em;
+    font-weight:600;
+}
+/* -----------------------------------------
+   Search/User
+----------------------------------------- */
+#search-bar{
+    border-bottom: 1px solid #ddd;
+}
+#search{
+    margin-top:3.45em;
+    margin-bottom: -2em;
+    padding-top:2px;
+    padding-bottom: 0px;
+    background: rgba(255, 255, 255, 0.5);
+}
+#search .container.user .row {
+    padding-bottom: 0;
+    margin-bottom: -0.75em;
+}
+#search .container.user .row .eight{
+    padding-bottom: 0;
+    margin-bottom: -0.75em;
+}
+#search .container.user .row .eight h6{
+    position: relative;
+    top:-0.5em;
+    font-weight: 400;
+}
+/* -----------------------------------------
+   Content
+----------------------------------------- */
+#content{
+    margin-top:0.1em;
+    padding:25px 90px;
+}
+#content .container.user .row .eight h5{
+    position: relative;
+    top:-0.4em;
+}
+#content .container.wrap{
+     background:  rgba(255, 255, 255, 1);
+     margin-left: 3em;
+     margin-right: 3em;
+     padding:10px 0;
+     box-shadow: 0 0 10px rgba(200, 200, 200, 1);
+}
+#content .container.wrap h5{
+    margin-top:0.4em;
+}
+#content .container.wrap .search{
+    margin-top: 1em;
+}
+#content .container.wrap #tab-area{
+    margin-top: 1em;
+}
+#content .container.wrap #outline p{
+    padding:0 0px;
+    font-size: 0.95em;
+}
+#content .container.wrap #outline ul.outline-details{
+    padding:0 10px;
+}
+#content .container.wrap #outline ul.outline-details li{
+    font-size: 0.9em;
+}
+/* -----------------------------------------
+   Course
+----------------------------------------- */
+#content .container.wrap #inner-page-wrap .three img{
+    padding:3px;
+    margin-top: 1em;
+    border:1px solid #ddd;
+}
+#content .container.wrap #inner-page-wrap .three ul.course-edit{
+    padding:2px 4px;
+    margin-bottom: 0em;
+    border-bottom: 1px dotted #ddd;
+}
+#content .container.wrap #inner-page-wrap .three ul.course-edit li{
+    display: inline-block;
+    margin-right: 0.3em;
+}
+#content .container.wrap #inner-page-wrap .three ul.side-nav{
+    padding:5px 4px;
+    margin-top: 0em;
+}
+/* -----------------------------------------
+   Footer
+----------------------------------------- */
+#footer{
+    background: rgba(63, 63, 63, 1);
+    background: #3f3f3f;
+    border-top:2px solid #000;
+}
+#footer p{
+    color: #eee;
+    margin-top: 0.6em;
+    margin-bottom: -0.5em;
+}
+#footer ul{
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+}
+/* -----------------------------------------
+   Media
+----------------------------------------- */
+@media all and (max-width:478px){
+    #header #navigation ul.branding li.mobile-logout{
+        display: block;
+    }
+    #header ul.branding li{
+        float:left;
+    }
+    #header ul.nav{
+        display:none;
+    }
+    #header ul.branding li a span.raphael{
+        font-family:'RaphaelIcons';
+        font-size: 1.5em;
+        font-weight:600;
+    }
+    #search{
+        margin-top:3.9em;
+        background: rgba(255, 255, 255, 0.5);
+    }
+    #search .container.user .row .eight h6{
+        position: relative;
+        top:0.2em;
+    }
+    #search .container.user .row {
+        padding-bottom: 0;
+        margin-bottom: -0.5em;
+    }
+    #search .container.user .row .eight{
+        padding-bottom: 0;
+        margin-bottom: -0.5em;
+    }
+    #content{
+        margin-top:2em;
+        padding:0;
+    }
+    #content .container.wrap{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #content .container.wrap #outline h5, #content .container.wrap #outline h6{
+        padding-left: 5px;
+    }
+}
+@media all and (max-width:798px){
+    #header #navigation ul.branding li.mobile-logout{
+        display: block;
+    }
+    #header ul.branding li{
+        float:left;
+    }
+    #header ul.nav{
+        display:none;
+    }
+    #header ul.branding li a span.raphael{
+        font-family:'RaphaelIcons';
+        font-size: 1.5em;
+        font-weight:600;
+    }
+    #search{
+        margin-top:3.9em;
+        background: rgba(255, 255, 255, 0.5);
+    }
+    #search .container.user .row .eight h6{
+        position: relative;
+        top:0.2em;
+    }
+    #content{
+        margin-top:2em;
+        padding:0;
+    }
+    #content .container.wrap{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #content .container.wrap #outline h5, #content .container.wrap #outline h6{
+        padding-left: 5px;
+    }
+}

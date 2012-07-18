@@ -4,12 +4,44 @@
    Table of Contents
 -----------------------------------------------------
 :: Shared Styles
-:: Page Name 1
-:: Page Name 2
+:: Login Page
+:: Navigation/Header
 */
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+html{
+	padding:0;
+	margin:0;
+}
 body{
 	background: url('../images/escheresque.png');
+	padding:0;
+	margin:0;
 }
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('../fonts/websymbols-regular-webfont.eot');
+    src: url('../fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/websymbols-regular-webfont.woff') format('woff'),
+         url('../fonts/websymbols-regular-webfont.ttf') format('truetype'),
+         url('../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.icons{
+	font-family: 'WebSymbolsRegular';
+}
+/* -----------------------------------------
+   Login Page
+----------------------------------------- */
+input[type="password"]{border:1px solid #ccc;-webkit-border-radius:2px;-moz-border-radius:2px;-ms-border-radius:2px;-o-border-radius:2px;border-radius:2px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);color:rgba(0,0,0,0.75);display:block;font-size:14px;margin:0 0 12px 0;padding:6px;height:32px;width:100%;-webkit-transition:all 0.15s linear;-moz-transition:all 0.15s linear;-o-transition:all 0.15s linear;transition:all 0.15s linear}
+input[type="password"].oversize{font-size:18px !important;font-size:1.8 rem !important}
+input[type="password"]:focus{background:#fafafa;outline:none !important;border-color:#b3b3b3}
+input[type="password"][disabled]{background-color:#ddd}
+
 #login{
 	margin-top: 85px;
 }
@@ -18,25 +50,38 @@ body{
 }
 #login .row .six.info h6{
 	margin-top: -13px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
-fieldset{
-	padding-bottom: 12px;
+#login .row .six.info h6, #login .row .six.info h1{font-family: 'Marmelad', sans-serif;text-shadow:0 -1px 0 rgba(0,0,0,0.15); padding-left:10px;}
+#login form{padding:15px;background: rgba(0, 0, 0, 0.7);border-radius: 3px;box-shadow: 0 0 3px #555;}
+#login form label{color:#eee; padding:5px;}
+#login .choice{
+	margin-bottom: 1em;
+}
+#login .choice a{
+	padding-left: 0.5em;
+}
+#login p{
+	font-size: 0.7em;
+	float: right;
+ 	color:#eee;
+ 	margin-top: -0.5em;
+ 	margin-bottom: -0.5em;
+}
+a.forgot{
+	padding-top: 10px;
 }
 /* -----------------------------------------
-   Shared Styles
+   Media
 ----------------------------------------- */
-
-
-
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
-
-
-
-
-/* -----------------------------------------
-   Page Name 2
------------------------------------------ */
+@media all and (max-width:478px){
+    #login{
+		margin-top: 25px;
+	}
+	#login .choice a{
+		position: relative;
+		top:0.5em;
+		padding-left: 0;
+	}
+}
 
