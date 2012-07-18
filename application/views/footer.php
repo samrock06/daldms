@@ -16,5 +16,22 @@
     </div>
 </div>
 </footer>
+<script type="text/javascript"> 
+   $(window).load(function() {
+       $('#featuredContent').orbit({ 
+       		animationSpeed: 800,                // how fast animtions are
+     		timer: true, 			 // true or false to have the timer
+     		resetTimerOnClick: false,
+       		fluid: '16x6' 
+       });
+   });
+   function textCounter(field,cntfield,maxlimit) {
+		if (field.value.length > maxlimit) // if too long...trim it!
+			field.value = field.value.substring(0, maxlimit);
+		// otherwise, update 'characters left' counter
+		else
+			cntfield.value = maxlimit - field.value.length;
+	}
+</script>
 </body>
 </html>

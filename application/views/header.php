@@ -44,19 +44,20 @@
           <li class="nav-divider"></li>
           <li><a href="<?php echo $base_url;?>u/"><span class="raphael">S</span> Home</a></li>
           <li><a href="<?php echo $base_url;?>u/profile"><span class="raphael">L</span> Profile</a></li>
-          <li><a href="<?php echo $base_url;?>u/course"><span class="raphael">Û</span> Course</a></li>
+          <li><a href="<?php echo $base_url;?>u/course"><span class="raphael">Û</span> Course(s)</a></li>
           <li><a href="<?php echo $base_url;?>oauth/logout"><span class="raphael">Ï</span> Logout</a></li>
         </ul>
       </div>
       <div class="three mobile-four columns" id="navigation">
         <ul class="branding">
-          <li><?php 
+          <li>
+            <?php 
             $attr = array(
               'title' => 'Brand',
               'class' => 'brand',
 
             );
-            echo anchor('/','DalDMS', $attr);
+            echo anchor('/','<img src="'.$base_url.'images/maavis_2_white_bevel.png" alt="image">', $attr);
             ?>
           </li>
           <li class="mobile-logout"><a href="<?php echo $base_url;?>oauth/logout"><span class="raphael">Ï</span></a></li>

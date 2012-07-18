@@ -45,6 +45,12 @@ input[type="password"][disabled]{background-color:#ddd}
 #login{
 	margin-top: 85px;
 }
+#login .row .six h1 img{
+	position: relative;
+	top:5px;
+	width: 45px;
+	margin-right: 3px;
+}
 #login .row .six{
 	padding:10px;
 }

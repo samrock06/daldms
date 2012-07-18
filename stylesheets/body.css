@@ -11,11 +11,13 @@
 html{
 	padding:0;
 	margin:0;
+    height: 100%;
 }
 body{
     background: url('../images/escheresque.png');
 	padding:0;
 	margin:0 auto;
+    height: 100%;
 }
 @font-face {
     font-family: 'WebSymbolsRegular';
@@ -51,8 +53,7 @@ body{
     position: relative;
     top:0;
     width:100%;
-    padding-top:5px;
-    padding-bottom:5px;
+    padding: 10px 0;
     background:rgba(51, 51, 51, 0.7);
     background:#333;
     border-top:4px solid rgba(46, 166, 203, 1);
@@ -89,6 +90,16 @@ body{
 #header ul.branding li{
     display:inline;
     margin:0.5em 0.5em;
+}
+#header ul.branding li a{
+}
+#header ul.branding li a img{
+    position: relative;
+    top:-4px;
+    width: 65px;
+    padding-bottom: 0;
+    margin-bottom: -8px;
+    margin-right: 5px;
 }
 #header ul.nav{
     display:block; 
@@ -170,6 +181,7 @@ body{
      margin-right: 3em;
      padding:10px 0;
      box-shadow: 0 0 10px rgba(200, 200, 200, 1);
+     min-height: 600px;
 }
 #content .container.wrap h5{
     margin-top:0.4em;
@@ -179,6 +191,16 @@ body{
 }
 #content .container.wrap #tab-area{
     margin-top: 1em;
+}
+#content .container.wrap #outline form textarea{
+    height: 100px;
+}
+#content .container.wrap #outline form label{
+    margin-bottom: 0.5em;
+}
+#content .container.wrap #outline h4{
+    border-bottom: 3px solid #ddd;
+    padding-bottom: 0.5em;
 }
 #content .container.wrap #outline p{
     padding:0 0px;
@@ -191,12 +213,51 @@ body{
     font-size: 0.9em;
 }
 /* -----------------------------------------
-   Course
+   Welcome Page
+----------------------------------------- */
+#content .container.wrap #inner-page-wrap #welcome > .row{
+  
+}
+#content .container.wrap #inner-page-wrap #welcome h4{
+    border-bottom: 3px solid #ddd;
+    padding-bottom: 0.5em;
+}
+#content .container.wrap #inner-page-wrap #welcome #featuredContent{
+    background:#eee;
+    background:rgba(221, 221, 221, 0.7);
+    margin-bottom: 1em;
+}
+#content .container.wrap #inner-page-wrap #welcome #featuredContent div{
+    padding:10px;
+}
+#content .container.wrap #inner-page-wrap #welcome .row .six p{
+    border:1px solid rgba(221, 221, 221, 0.7);
+    border:1px solid #eee;
+    padding:1em;
+}
+#content .container.wrap #inner-page-wrap #welcome .row .six p a{
+    clear: both;
+    margin-top: 0.5em;
+    padding-top:0.5em;
+    border-top:1px dotted #ddd;
+    display: block;
+}
+/* -----------------------------------------
+   Course Page
 ----------------------------------------- */
 #content .container.wrap #inner-page-wrap .three img{
     padding:3px;
     margin-top: 1em;
     border:1px solid #ddd;
+    width:260px;
+}
+#content .container.wrap #inner-page-wrap .three dl{
+    margin-top: 0.7em;
+}
+#content .container.wrap #inner-page-wrap .three dl.nice.vertical.tabs dd a:hover{
+    border:none;
+    background:#888;
+    color:#fff;
 }
 #content .container.wrap #inner-page-wrap .three ul.course-edit{
     padding:2px 4px;
@@ -206,6 +267,9 @@ body{
 #content .container.wrap #inner-page-wrap .three ul.course-edit li{
     display: inline-block;
     margin-right: 0.3em;
+}
+#content .container.wrap #inner-page-wrap .three ul.course-edit li.nav-div{
+    border-right:1px dotted #ddd;
 }
 #content .container.wrap #inner-page-wrap .three ul.side-nav{
     padding:5px 4px;
@@ -228,6 +292,18 @@ body{
     margin-top: 0.6em;
     margin-bottom: 0.6em;
 }
+/* -----------------------------------------
+     CLEAR FIX
+----------------------------------------- */
+.clearfix:after {content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
 /* -----------------------------------------
    Media
 ----------------------------------------- */

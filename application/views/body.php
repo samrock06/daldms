@@ -1,4 +1,4 @@
-<section id="content">
+<section id="content" class="clearfix">
 	<div class="container wrap">
 		<?php 
 			if($page === 'course'){

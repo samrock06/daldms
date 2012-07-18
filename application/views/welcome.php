@@ -30,7 +30,7 @@
 <div class="container" id="login">
 	<div class="row">
 		<div class="six columns centered info">  
-			<h1>DalDMS</h1>  
+			<h1><img src="./images/maavis_black.png" alt="image">DalDMS</h1>  
 			<h6>Document Management System</h6>
       <?php
         $form = array(

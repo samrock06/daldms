@@ -23,8 +23,18 @@ class Dms_model extends CI_Model{
     	
         if($query->num_rows()>0)
         {
+        	$uni_name = "";
+            $uni_adr = "";
             foreach($query->result() as $rows)
             {
+            	$this->db->where("uid", $rows->university);
+            	$university = $this->db->get("university");
+            	if($university->num_rows()>0){
+            		foreach($university->result() as $row){
+            			$uni_name = $row->university;
+            			$uni_adr = $row->address;
+            		}
+            	}
                 //add all data to session
                 $newdata = array(
                         'user_id'     => $rows->user_id,
@@ -33,6 +43,8 @@ class Dms_model extends CI_Model{
                         'first_name'     => $rows->firstname,
                         'last_name'     => $rows->lastname,
                         'user_email'    => $rows->email,
+                        'university'	=> $uni_name,
+                        'address'		=> $uni_adr,
                         'status'		=> $rows->status,
                         'search'		=> array(),
                         'logged_in'     => TRUE,
@@ -50,6 +62,13 @@ class Dms_model extends CI_Model{
     	$this->db->where("prof_id", $userid);
     	$query=$this->db->get("course");
 		return $query;
+    }
+    function checkCourse($cid){
+    	$this->db->select("*");
+    	$this->db->where("c_id", $cid);
+    	$this->db->having("prof_id", $this->session->userdata('user_id'));
+    	$query=$this->db->get("course");
+    	return $query;
     }
     function search($term){
     	$entire_term = $term;

@@ -38,19 +38,8 @@ class Main extends CI_Controller {
 				'javascripts/modernizr.foundation.js',
 				'javascripts/script.js'
 			);
-		$this->data['code'] = '';
-		if($this->session->userdata('session_id')){
-			$this->data['user_title'] = $this->session->userdata('title');
-			$this->data['firstname'] = $this->session->userdata('first_name');
-			$this->data['lastname'] = $this->session->userdata('last_name');
-			$this->data['status'] = $this->session->userdata('status');
-			$this->data['check'] = $this->session->userdata('logged_in');
-		}
-		else{
-			$this->data['firstname'] = '';
-			$this->data['lastname'] = '';
-			$this->data['check'] = $this->session->userdata('logged_in');
-		}
+		$this->data['auth'] = '';
+		$this->data['check'] = $this->session->userdata('logged_in');
 	}
 	public function _remap($method)
 	{
@@ -70,9 +59,9 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		$check = $this->session->userdata('logged_in');
-		$this->data['code'] = $this->uri->segment(1);
+		$this->data['auth'] = $this->uri->segment(1);
 		$this->data['title']='DalDMS - Login';
-		if($this->data['code'] == 'auth_fail'){
+		if($this->data['auth'] == 'auth_fail'){
 			$this->data['error'] = '<div class="alert-box [success alert secondary]">
   										Incorrect Username or Password
   										<a href="" class="close">&times;</a>
@@ -88,19 +77,52 @@ class Main extends CI_Controller {
 	}
 	function main_user($page)
 	{
+		if($this->session->userdata('session_id')){
+			$this->data['user_title'] = $this->session->userdata('title');
+			$this->data['firstname'] = $this->session->userdata('first_name');
+			$this->data['lastname'] = $this->session->userdata('last_name');
+			$this->data['status'] = $this->session->userdata('status');
+			$this->data['user_email'] = $this->session->userdata('user_email');
+			$this->data['university'] = $this->session->userdata('university');
+			$this->data['address'] = $this->session->userdata('address');
+			$this->data['profile_image'] = $this->load->view('profile_image', $this->data, TRUE);
+			$this->data['check'] = $this->session->userdata('logged_in');
+			$this->data['course_attr'] = array();
+			$query = $this->dms_model->getCourse();
+			if($query->num_rows() > 0){
+				$this->data['course_attr'] = $query->result();
+			}
+		}
+		else{
+			$this->data['firstname'] = '';
+			$this->data['lastname'] = '';
+			$this->data['check'] = $this->session->userdata('logged_in');
+		}
+
 		if( $this->data['check'] && $page === 'course'){
+			$segment = $this->uri->segment(3);
+			$single_course = array();
+
+			$course_info = array();
+			if( !empty($segment) && $segment !== 'add'){
+				$crs_exist = $this->dms_model->checkCourse($segment);
+				if($crs_exist->num_rows() > 0){
+					$this->data['single_course'] = $this->load->view('single_course_view', $this->data, TRUE);
+				}
+				else{
+					$this->data['single_course'] = $this->load->view('error', $this->data, TRUE);;
+				}
+			}
+			else{
+				$this->data['single_course'] = $this->load->view('add_course_view', $this->data, TRUE);;
+			}	
+			
+			
 			$this->data['page'] = $page;
 			$this->data['status'] = $this->session->userdata('status');
 			$this->data['title'] = 'DalDMS - '.$this->data['firstname'];
-			$course_array = array();
-			$query = $this->dms_model->getCourse();
-			if($query->num_rows() > 0){
-				for($i=0;$i < count($query->num_rows()); $i++){
-					$course_array[$i] = $query->row();
-				}
-				$this->data['course_attr'] = $course_array;
-				$this->data['course'] = $this->load->view('course_view', $this->data, TRUE);
-			}
+	
+			$this->data['course'] = $this->load->view('course_view', $this->data, TRUE);
 			$this->load->view('header', $this->data);
 			$this->load->view('body', $this->data);
 			$this->load->view('footer', $this->data);
