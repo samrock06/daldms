@@ -1,5 +1,6 @@
 <?php
   $course_info = array();
+
   foreach ($course_attr as $id => $object)
   { 
     foreach ($object as $key => $value)

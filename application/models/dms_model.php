@@ -56,6 +56,11 @@ class Dms_model extends CI_Model{
         }
         return false;
     }
+    function getUniversity(){
+    	$this->db->select("*");
+    	$query = $this->db->get("university");
+    	return $query;
+    }
     function getCourse(){
     	$course = array();
     	$userid = $this->session->userdata('user_id');
@@ -93,11 +98,14 @@ class Dms_model extends CI_Model{
     	}
     	else{
     		$data=array(
-                'firstname'=>'Kevin',
-                'lastname'=>'Smith',
-                'email'=>'ksmith@dal.ca',
-                'password'=>md5('sqlroot2'),
-                'status'=>'professor'
+    			'title'=>'Dr.',
+    			'username'=>'epresley',
+                'firstname'=>'Elvis',
+                'lastname'=>'Presley',
+                'email'=>'epresley@smu.ca',
+                'university'=>'2',
+                'password'=>md5('sqlroot3'),
+                'status'=>'director'
         	);
         	$this->db->insert('users',$data);
     	}

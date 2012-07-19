@@ -95,6 +95,12 @@ class Main extends CI_Controller {
 			$this->data['profile_image'] = $this->load->view('profile_image', $this->data, TRUE);
 			$this->data['check'] = $this->session->userdata('logged_in');
 			$this->data['course_attr'] = array();
+			$this->data['assoc_unis'] = array();
+
+			$asscuni = $this->dms_model->getUniversity();
+			if($asscuni->num_rows() > 0){
+				$this->data['assoc_unis'] = $asscuni->result();
+			}
 			$query = $this->dms_model->getCourse();
 			if($query->num_rows() > 0){
 				$this->data['course_attr'] = $query->result();

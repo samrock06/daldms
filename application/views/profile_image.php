@@ -1,1 +1,1 @@
-<img src="<?php echo $base_url?>images/passport.jpeg" alt="">
+<img src="http://placehold.it/260x260" alt="">
