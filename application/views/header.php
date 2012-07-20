@@ -35,6 +35,7 @@
 <!--=====================================
   HEADER SECTION
 ======================================-->
+
 <header id="header">
   <div class="container">
     <div class="row">
@@ -44,7 +45,24 @@
           <li class="nav-divider"></li>
           <li><a class="<?php echo $h_active;?>" href="<?php echo $base_url;?>u/"><span class="raphael">S</span> Home</a></li>
           <li><a class="<?php echo $p_active;?>" href="<?php echo $base_url;?>u/profile"><span class="raphael">L</span> Profile</a></li>
-          <li><a class="<?php echo $c_active;?>" href="<?php echo $base_url;?>u/course"><span class="raphael">Û</span> Course(s)</a></li>
+          <li id="submenu"><a class="<?php echo $c_active;?>" href=""><span class="raphael">Û</span> Course(s)</a>
+                <ul class="subnav">
+                <?php
+                  $course_info = array();
+                  foreach ($course_attr as $id => $object)
+                  { 
+                    foreach ($object as $key => $value)
+                    { 
+                      $course_info[$id][$key] = $value;
+                    }
+                  }
+                  for ($i=0; $i < count($course_info); $i++) {
+                    echo '<li><a href="'.$base_url.'u/course/'.$course_info[$i]['c_id'].'">'.$course_info[$i]['code'].'</a></li>'."\n";
+                  }
+                ?>
+                  <li><a href="<?php echo $base_url;?>u/course/">Add Course</a></li>
+                </ul>
+          </li>
           <li><a href="<?php echo $base_url;?>oauth/logout"><span class="raphael">Ï</span> Logout</a></li>
         </ul>
       </div>

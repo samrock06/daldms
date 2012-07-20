@@ -60,19 +60,10 @@
   <div class="three mobile-four columns">
     <?php echo $profile_image;?>
     <ul class="course-edit">
-      <li><a href="<?php echo $base_url;?>u/course/">Add</a></li>
-      <li class="nav-div"></li>
       <li><a href="">Edit</a></li>
       <li class="nav-div"></li>
       <li><a href="">Delete</a></li>
     </ul>
-    <dl class="nice vertical tabs">
-    <?php
-      for ($i=0; $i < count($course_info); $i++) {
-        echo '<dd><a href="'.$base_url.'u/course/'.$course_info[$i]['c_id'].'">'.$course_info[$i]['code'].'</a></dd>'."\n";
-      }
-    ?>
-  	</dl>
   </div>
   <div class="nine mobile-four columns" id="outline">
       <?php echo $single_course;?>
