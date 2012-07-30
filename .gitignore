@@ -1,0 +1,11 @@
+**/**/.DS_Store
+schema-draft*
+*/config/config.php
+*/config/database.php
+
+# From the gitignore repo
+*/config/development
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
