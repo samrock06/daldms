@@ -2,18 +2,18 @@
 <div class="container" id="topFooter">
   <div class="row">
       <div class="four mobile-four columns">
-        <h5>ASSOCIATE UNIVERSITIES</h5>
+        <h5>Associate Universities</h5>
         <ul>
         <?php
           for ($i=0; $i < count($assoc_unis); $i++) {
-            echo '<li><a href="'.$base_url.'u/university/'.$assoc_unis[$i]['uid'].'">'.$assoc_unis[$i]['university'].'</a></li>'."\n";
+            echo '<li><a href="'.$base_url.'user/university/'.$assoc_unis[$i]['uid'].'">'.$assoc_unis[$i]['university'].'</a></li>'."\n";
           }
         ?>
         </ul>
       </div>
       <div class="four mobile-four columns">
-        <h5>CONTACT</h5>
-        <form class="custom">
+        <h5>Contact Us</h5>
+        <!--<form class="custom">
           <div class="row">
             <div class="twelve columns">
               <div class="row collapse">
@@ -32,7 +32,7 @@
             </div>
           </div>
           <input type="submit" name="" value="Send" class="medium radius button"  />
-        </form>
+        </form>-->
       </div>
       <div class="four mobile-four columns">
       </div>
@@ -48,15 +48,15 @@
         </div>
         <div class="eight columns">
           <ul class="link-list right">
-            <li><a href="../index.php">Home</a></li>
-            <li class="footer-div">|</li>
-            <li><a href="<?php echo $base_url;?>u/profile">Profile</a></li>
-            <li class="footer-div">|</li>
-            <li><a href="<?php echo $base_url;?>u/course">Course</a></li>
-            <li class="footer-div">|</li>
-            <li><a href="<?php echo $base_url;?>u/about">Documents</a></li>
-            <li class="footer-div">|</li>
-            <li><a href="<?php echo $base_url;?>u/about">About</a></li>
+            <li><a href="/daldms/user">Home</a></li>
+            <li class="footer-div">/</li>
+            <li><a href="<?php echo $base_url;?>user/profile">Profile</a></li>
+            <li class="footer-div">/</li>
+            <li><a href="<?php echo $base_url;?>user/course">Course</a></li>
+            <li class="footer-div">/</li>
+            <li><a href="<?php echo $base_url;?>user/about">Documents</a></li>
+            <li class="footer-div">/</li>
+            <li><a href="<?php echo $base_url;?>user/about">About</a></li>
           </ul>
         </div>
     </div>

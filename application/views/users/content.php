@@ -1,8 +1,30 @@
 <section id="content" class="clearfix">
   <div class="container wrap">
-    <?php 
-      echo $page;
-    ?>
+  	<h3>
+  		<?php
+  			$path = $this->uri->segment(2);
+			if($path == 'course'){
+  				echo 'Course / '.$course[0]['name'];
+  			}
+  			else if($path == 'profile'){
+  				echo 'Profile / '.$user_title.' '.$firstname.' '.$lastname;
+  			}
+  			else if($path == 'add_course'){
+  				echo 'Add Course';
+  			}
+  			else if($path == 'search'){
+  				echo 'Search';
+  			}
+  			else{
+  				echo 'Home / '.$user_title.' '.$firstname.' '.$lastname;
+  			}
+  		?>
+  	</h3>
+  	<div class="row main-row">
+    	<?php 
+      		echo $page;
+    	?>
+	</div>
   </div>
 <div id="myModal" class="reveal-modal">
   <h2>Awesome. I have it.</h2>

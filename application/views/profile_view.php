@@ -26,7 +26,7 @@
     );
     ?>
     <div class="row collapse">
-      <?php echo form_open('u/search')."\n";?>
+      <?php echo form_open('user/search')."\n";?>
         <div class="ten mobile-three columns">
           <?php echo form_input($input)."\n";?>
         </div>
@@ -75,7 +75,7 @@
     <ul>
     <?php
     	for ($i=0; $i < count($course_info); $i++) {
-        echo '<li><a href="'.$base_url.'u/course/'.$course_info[$i]['c_id'].'">'.$course_info[$i]['name'].' - '.$course_info[$i]['code'].'</a></li>'."\n";
+        echo '<li><a href="'.$base_url.'user/course/'.$course_info[$i]['c_id'].'">'.$course_info[$i]['name'].' - '.$course_info[$i]['code'].'</a></li>'."\n";
       }
     ?>
      </ul>

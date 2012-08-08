@@ -10,7 +10,7 @@
  * @license   
  * @link      http://ca.linkedin.com/pub/samuel-haruna/24/90/182      
  * @since     Version 1.0
- * @filesource BASEPATH/application/controllers/users.php
+ * @filesource BASEPATH/application/controllers/user.php
  */
 
 // ------------------------------------------------------------------------
@@ -73,30 +73,41 @@ class User extends My_controller
   }
   public function land()
   {
-    $this->data['h_active'] = 'active';
-    $this->data['page'] = $this->load->view('land_view', $this->data, TRUE);
+    if($this->session->userdata('logged_in')){
+      $this->data['h_active'] = 'active';
+      $this->data['page'] = $this->load->view('land_view', $this->data, TRUE);
 
-    $this->load->view('shared/header', $this->data);
-    $this->load->view('users/content', $this->data);
-    $this->load->view('shared/footer', $this->data);
+      $this->load->view('shared/header', $this->data);
+      $this->load->view('users/content', $this->data);
+      $this->load->view('shared/footer', $this->data);
+    }
+    else{
+      redirect('user/');
+    }
   }
   public function profile(){
-    $this->data['p_active'] = 'active';
-    $this->data['status'] = $this->session->userdata('status');
-    $this->data['title'] = 'DalDMS - '.$this->data['firstname'];
-    $this->data['page'] = $this->load->view('profile_view', $this->data, TRUE);
+    if($this->session->userdata('logged_in')){
+      $this->data['p_active'] = 'active';
+      $this->data['status'] = $this->session->userdata('status');
+      $this->data['title'] = 'DalDMS - '.$this->data['firstname'];
+      $this->data['page'] = $this->load->view('profile_view', $this->data, TRUE);
 
-    $this->load->view('shared/header', $this->data);
-    $this->load->view('users/content', $this->data);
-    $this->load->view('shared/footer', $this->data);
+      $this->load->view('shared/header', $this->data);
+      $this->load->view('users/content', $this->data);
+      $this->load->view('shared/footer', $this->data);
+    }
+    else{
+      redirect('user/');
+    }
   }
   public function course($id = null){
-    $this->data['c_active'] = 'active';
-    $segment = $id;
-    $single_course = array();
+    if($this->session->userdata('logged_in')){
+      $this->data['c_active'] = 'active';
+      $segment = $id;
+      $single_course = array();
 
-    $course_info = array();
-    if( !empty($segment) && $segment !== 'add'){
+      $course_info = array();
+      if( !empty($segment) && $segment !== 'add'){
         $crs_exist = $this->course_model->checkCourse($segment);
         if(count($crs_exist) > 0){
           $this->data['single_course'] = $this->load->view('users/single_course_view', $this->data, TRUE);
@@ -105,7 +116,8 @@ class User extends My_controller
           $this->data['single_course'] = $this->load->view('error', $this->data, TRUE);;
         }
       }
-      
+        
+      $this->data['course'] = $crs_exist;
       $this->data['status'] = $this->session->userdata('status');
       $this->data['title'] = 'DalDMS - '.$this->data['firstname'];
   
@@ -113,29 +125,42 @@ class User extends My_controller
       $this->load->view('shared/header', $this->data);
       $this->load->view('users/content', $this->data);
       $this->load->view('shared/footer', $this->data);
+    }
+    else{
+      redirect('user/');
+    }
   }
   public function search(){
-    $this->data['status'] = $this->session->userdata('status');
-    $this->data['title'] = 'DalDMS - '.$this->data['firstname'];
-    $this->data['page'] = $page;
-    $this->main_model->search($this->input->post('search'));
-    $this->data['page'] = $this->load->view('search_view', $this->data, TRUE);
+    if($this->session->userdata('logged_in')){
+      $this->data['status'] = $this->session->userdata('status');
+      $this->data['title'] = 'DalDMS - '.$this->data['firstname'];
+      $this->main_model->search($this->input->post('search'));
+      $this->data['page'] = $this->load->view('search_view', $this->data, TRUE);
 
-    $this->load->view('shared/header', $this->data);
-    $this->load->view('users/content', $this->data);
-    $this->load->view('shared/footer', $this->data);
+      $this->load->view('shared/header', $this->data);
+      $this->load->view('users/content', $this->data);
+      $this->load->view('shared/footer', $this->data);
+    }
+    else{
+      redirect('user/');
+    }
   }
   public function add_course()
   {
-    $this->data['c_active'] = 'active';
-    $this->data['status'] = $this->session->userdata('status');
-    $this->data['title'] = 'DalDMS - '.$this->data['firstname'];
-    $this->data['single_course'] = $this->load->view('users/add_course_view', $this->data, TRUE);
-    $this->data['page'] = $this->load->view('users/course_view', $this->data, TRUE);
+    if($this->session->userdata('logged_in')){
+      $this->data['c_active'] = 'active';
+      $this->data['status'] = $this->session->userdata('status');
+      $this->data['title'] = 'DalDMS - '.$this->data['firstname'];
+      $this->data['single_course'] = $this->load->view('users/add_course_view', $this->data, TRUE);
+      $this->data['page'] = $this->load->view('users/course_view', $this->data, TRUE);
 
-    $this->load->view('shared/header', $this->data);
-    $this->load->view('users/content', $this->data);
-    $this->load->view('shared/footer', $this->data);
+      $this->load->view('shared/header', $this->data);
+      $this->load->view('users/content', $this->data);
+      $this->load->view('shared/footer', $this->data);
+    }
+    else{
+      redirect('user/');
+    }
   }
   
   public function fresh()
@@ -183,7 +208,7 @@ class User extends My_controller
   public function show($id)
   {
     // log_message('info', $id);
-    $user = (array)$this->db->get_where('users', array('id' => $id))->result();
+    $user = (array)$this->db->get_where('user', array('id' => $id))->result();
     // var_dump($user);
     
     if (! empty($user))

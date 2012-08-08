@@ -1,6 +1,6 @@
 <div class="row" id="search-bar">
   <div class="nine mobile-four columns">
-    <h5>Welcome! <?php echo $user_title.' '.$firstname.' '.$lastname?></h5>
+    <h5>Welcome!</h5>
   </div>
   <div class="three mobile-four columns">
   <?php
@@ -21,7 +21,7 @@
     );
     ?>
     <div class="row collapse">
-      <?php echo form_open('u/search')."\n";?>
+      <?php echo form_open('user/search')."\n";?>
         <div class="ten mobile-three columns">
           <?php echo form_input($input)."\n";?>
         </div>
@@ -40,53 +40,49 @@
         </div>
       </div>
 <div class="row" id="inner-page-wrap">
+  <div class="nine mobile-four columns" id="welcome">
+    <h4>Central Repository for Associate Universities.</h4>
+    <div class="row">
+      <div class="five columns">
+        <img src="http://placehold.it/260x180" alt="">
+      </div>
+      <div class="seven columns">
+        <h5>Some Random Post</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   
+          <a href="">Read More >></a>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="five columns">
+        <img src="http://placehold.it/260x180" alt="">
+      </div>
+      <div class="seven columns">
+        <h5>Some Random Post</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          <a href="">Read More >></a>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="five columns">
+        <img src="http://placehold.it/260x180" alt="">
+      </div>
+      <div class="seven columns">
+        <h5>Some Random Post</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          <a href="">Read More >></a>
+        </p>
+      </div>
+    </div>
+  </div>
   <div class="three mobile-four columns">
     <?php //echo $profile_image;?>
     <ul class="side-nav">
 
     </ul>
-  </div>
-  <div class="nine mobile-four columns" id="welcome">
-    <h4>Central Repository for Associate Universities.</h4>
-    <div class="row">
-      <div class="six columns">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          
-          <a href="">Read More >></a>
-        </p>
-      </div>
-      <div class="six columns">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          
-          <a href="">Read More >></a>
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="six columns">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          
-          <a href="">Read More >></a>
-        </p>
-      </div>
-      <div class="six columns">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          
-          <a href="">Read More >></a>
-        </p>
-      </div>
-    </div>
   </div>
 </div>
