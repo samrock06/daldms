@@ -1,9 +1,32 @@
-<?php
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * DalDMS
+ *
+ * An open source course dependency management system
+ *
+ * @package     DalDMS
+ * @author      Samuel Haruna
+ * @copyright   Copyright (c) 2012 - 2022, DalDMS
+ * @license   
+ * @link        http://ca.linkedin.com/pub/samuel-haruna/24/90/182      
+ * @since       Version 1.0
+ * @filesource BASEPATH/application/controllers/oauth.php
+ */
+
+// ------------------------------------------------------------------------
+
+/**
+* Sessions controller.
+*
+* Handles authentication and provides a framework for user login/sign out.
+*/
+
 class Oauth extends CI_Controller{
+
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('dms_model');
+		$this->load->model('main_model');
 	}
 	function login($email = NULL, $password = NULL)
 	{
@@ -14,10 +37,10 @@ class Oauth extends CI_Controller{
 			redirect('auth_fail/', 'location');
 		}
 		else{
-			$email=$this->input->post('email');
-        	$password=md5($this->input->post('password'));
+			$email = $this->input->post('email');
+        	$password = md5($this->input->post('password'));
 
-        	$result=$this->dms_model->login($email,$password);
+        	$result = $this->main_model->login($email,$password);
 			if($result) 
         		redirect('u/', 'location');
         	else        
@@ -44,4 +67,3 @@ class Oauth extends CI_Controller{
         redirect('/', 'location');
     }
 }
-?>

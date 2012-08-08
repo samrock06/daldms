@@ -32,33 +32,22 @@
     </div>
   </div>
 </div>
+<div class="row">
+      <div id="featured">
+        <img src="<?php echo $base_url;?>images/featured.png" />
+        <img src="<?php echo $base_url;?>images/featured1.png" />
+        <img src="<?php echo $base_url;?>images/featured2.png" />
+        </div>
+      </div>
 <div class="row" id="inner-page-wrap">
   <div class="three mobile-four columns">
-    <?php echo $profile_image;?>
-    <ul class="course-edit">
-      
-    </ul>
+    <?php //echo $profile_image;?>
     <ul class="side-nav">
 
     </ul>
   </div>
   <div class="nine mobile-four columns" id="welcome">
     <h4>Central Repository for Associate Universities.</h4>
-    <div id="featuredContent">
-      <div>
-        <h5>This is a content slider.</h5>
-        <p>Each slide holds arbitrary content, like text or actions.</p>
-      </div>
-      <div>
-        <h5>We can include text and buttons, like this!</h5>
-        <p>Clickable Buttons.</p>
-        <p><a href="#" class="button" target="_blank">Click Me!</a></p>
-      </div>
-      <div>
-        <h5>What? You didn't click it?</h5>
-        <p>Placeholder Text</p>
-      </div>
-    </div>
     <div class="row">
       <div class="six columns">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 

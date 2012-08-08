@@ -14,7 +14,6 @@
 				echo $land;
 			}
 		?>
-				<!--<a href="#" class="button" data-reveal-id="myModal">Click Me For A Modal</a>-->
 	</div>
 <div id="myModal" class="reveal-modal">
   <h2>Awesome. I have it.</h2>

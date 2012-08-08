@@ -10,9 +10,9 @@ $(document).ready(function() {
   		e.preventDefault();
   	});
   	$('#submenu').hover(function(){
-  			$(this).find('ul').slideDown('fast');
+  			$(this).find('ul').show();
   		},function (){
-  			$(this).find('ul').slideUp('fast');
+  			$(this).find('ul').hide();
   		}
   	);
 });

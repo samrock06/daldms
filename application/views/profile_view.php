@@ -1,12 +1,4 @@
 <?php
-$course_info = array();
-  foreach ($course_attr as $id => $object)
-  { 
-    foreach ($object as $key => $value)
-    { 
-      $course_info[$id][$key] = $value;
-    }
-  }
   for($i=0; $i < count($course_info); $i++){
   	$courses[$i] = $course_info[$i]['name'];
   }

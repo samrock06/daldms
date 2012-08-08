@@ -16,10 +16,6 @@
   <?php echo link_tag('stylesheets/body.css')."\n";?>
   <link href='http://fonts.googleapis.com/css?family=Lovers+Quarrel' rel='stylesheet' type='text/css'>
 
-  <!-- Included JS Files -->
-  <?php foreach ($scripts as $script): ?>
-  <script type='text/javascript' src = '<?php echo $base_url.$script;?>'></script>
-  <?php endforeach;?>
   <script type="text/javascript">
   function removeHash () { 
     history.pushState("", document.title, window.location.pathname + window.location.search);
@@ -35,35 +31,25 @@
 <!--=====================================
   HEADER SECTION
 ======================================-->
-
 <header id="header">
   <div class="container">
     <div class="row">
       <div class="nine mobile-four columns" id="navigation">
-        <ul class="nav hide-on-phones">
-          <li class="user-details"><?php echo $user_title.' '.$lastname.' ('.ucfirst($status).')';?></li>
-          <li class="nav-divider"></li>
-          <li><a class="<?php echo $h_active;?>" href="<?php echo $base_url;?>u/"><span class="raphael">S</span> Home</a></li>
-          <li><a class="<?php echo $p_active;?>" href="<?php echo $base_url;?>u/profile"><span class="raphael">L</span> Profile</a></li>
-          <li id="submenu"><a class="<?php echo $c_active;?>" href=""><span class="raphael">Û</span> Course(s)</a>
+        <ul class="nav">
+          <li class="user-details"><a class="" href="<?php echo $base_url;?>u/"><?php echo $user_title.' '.$lastname.' ('.ucfirst($status).')';?></a></li>
+          <li class="nav-list"><a class="<?php echo $h_active;?>" href="<?php echo $base_url;?>user/"><span class="raphael">S</span> Home</a></li>
+          <li class="nav-list"><a class="<?php echo $p_active;?>" href="<?php echo $base_url;?>user/profile"><span class="raphael">L</span> Profile</a></li>
+          <li class="nav-list" id="submenu"><a class="<?php echo $c_active;?>" href="<?php echo $base_url;?>user/add_course/"><span class="raphael">Û</span> Course(s)</a>
                 <ul class="subnav">
                 <?php
-                  $course_info = array();
-                  foreach ($course_attr as $id => $object)
-                  { 
-                    foreach ($object as $key => $value)
-                    { 
-                      $course_info[$id][$key] = $value;
-                    }
-                  }
                   for ($i=0; $i < count($course_info); $i++) {
-                    echo '<li><a href="'.$base_url.'u/course/'.$course_info[$i]['c_id'].'">'.$course_info[$i]['code'].'</a></li>'."\n";
+                    echo '<li><a href="'.$base_url.'user/course/'.$course_info[$i]['c_id'].'">'.$course_info[$i]['code'].'</a></li>'."\n";
                   }
                 ?>
-                  <li><a href="<?php echo $base_url;?>u/course/">Add Course</a></li>
+                  <li><a href="<?php echo $base_url;?>user/add_course/">Add Course</a></li>
                 </ul>
           </li>
-          <li><a href="<?php echo $base_url;?>oauth/logout"><span class="raphael">Ï</span> Logout</a></li>
+          <li class="nav-list"><a href="<?php echo $base_url;?>sessions/logout"><span class="raphael">Ï</span> Logout</a></li>
         </ul>
       </div>
       <div class="three mobile-four columns" id="navigation">
@@ -75,10 +61,10 @@
               'class' => 'brand',
 
             );
-            echo anchor('/','<img src="'.$base_url.'images/maavis_2_white_bevel.png" alt="image">', $attr);
+            echo anchor('/','DalDMS', $attr);
             ?>
           </li>
-          <li class="mobile-logout"><a href="<?php echo $base_url;?>oauth/logout"><span class="raphael">Ï</span></a></li>
+          <li class="mobile-logout"><a href="<?php echo $base_url;?>sessions/logout"><span class="raphael">Ï</span></a></li>
         </ul>
       </div>
     </div>

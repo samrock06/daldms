@@ -16,7 +16,7 @@ html{
 	margin:0;
 }
 body{
-	background: url('../images/escheresque.png');
+	background: url('../images/light_wool.png');
 	padding:0;
 	margin:0;
 }
@@ -58,19 +58,36 @@ input[type="password"][disabled]{background-color:#ddd}
 	margin-top: -13px;
 	margin-bottom: 20px;
 }
-#login .row .six.info h6, #login .row .six.info h1{font-family: 'Marmelad', sans-serif;text-shadow:0 -1px 0 rgba(0,0,0,0.15); padding-left:10px;}
-#login form{padding:15px;background: rgba(0, 0, 0, 0.7);border-radius: 3px;box-shadow: 0 0 3px #555;}
-#login form label{color:#eee; padding:5px;}
+#login .row .six.info h6, #login .row .six.info h1{
+	font-family: 'Marmelad', sans-serif;
+	text-shadow:0 -1px 0 rgba(0,0,0,0.15); 
+	padding-left:10px;
+}
+#login form{
+	padding:25px;
+	background: rgba(231, 231, 231, 1);
+	border:3px solid rgba(255, 255, 255, 0.8);
+	border-radius: 3px;
+	box-shadow: 0 0 10px rgba(121, 121, 121, 0.5);
+}
+#login form label{
+	color:rgba(101, 101, 101, 1); 
+	font-weight: 400;
+	padding:5px;
+}
 #login .choice{
 	margin-bottom: 1em;
 }
 #login .choice a{
 	padding-left: 0.5em;
 }
+#login .loginSubmit{
+	font-weight: 400;
+}
 #login p{
 	font-size: 0.7em;
 	float: right;
- 	color:#eee;
+ 	color:rgba(101, 101, 101, 0.8);
  	margin-top: -0.5em;
  	margin-bottom: -0.5em;
 }
